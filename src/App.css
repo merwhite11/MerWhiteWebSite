@@ -1,0 +1,11 @@
+.header {
+    text-align: center;
+}
+
+.rows {
+    justify-content: center;
+}
+
+.columns {
+    border: 2px green
+}
