@@ -2,7 +2,7 @@ require('file-loader?name=[name].[ext]!./index.html')
 import {createRoot} from 'react-dom/client';
 import React from 'react';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // const App = () => {
 //  return <h1>💠Welcome to Mer White's Web Site!💠</h1>;
