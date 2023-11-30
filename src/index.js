@@ -1,5 +1,6 @@
 require('file-loader?name=[name].[ext]!./index.html')
 import {createRoot} from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom';
 import React from 'react';
 import App from './App';
 
@@ -9,5 +10,11 @@ import App from './App';
 //  }
 const container = document.getElementById('app');
 const root = createRoot(container);
-root.render(<App tab="home" />);
+root.render( 
+<React.StrictMode>
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+</React.StrictMode>
+);
 // ReactDOM.render(<App />, document.getElementById('app'));
