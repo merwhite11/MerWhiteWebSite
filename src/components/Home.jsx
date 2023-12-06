@@ -4,7 +4,10 @@ import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
 import {Link} from 'react-router-dom';
 
-import samplePDF from '../docs/sample.pdf';
+import ReactPDF from '@react-pdf/renderer';
+
+
+// import samplePDF from '../dist/sample.pdf';
 
 const Home = (props) => {
     return(
@@ -12,7 +15,7 @@ const Home = (props) => {
           <div className="row justify-content-center">
             <WritingContainer></WritingContainer>
             <DanceContainer></DanceContainer>
-            <SinglePage pdf={samplePDF} />
+            {/* <SinglePage pdf={} /> */}
           </div>
         </div>
       );
