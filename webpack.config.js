@@ -29,28 +29,28 @@ module.exports = {
        use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
         use: ['file-loader'],
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: './sample.pdf' },
-        { from: cMapsDir, to: 'cmaps/' },
-        { from: standardFontsDir, to: 'standard_fonts/' },
-      ],
-    }),
-  ]
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+  //     }
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     template: 'index.html',
+  //   }),
+  //   new CopyWebpackPlugin({
+  //     patterns: [
+  //       { from: './sample.pdf' },
+  //       { from: cMapsDir, to: 'cmaps/' },
+  //       { from: standardFontsDir, to: 'standard_fonts/' },
+  //     ],
+  //   }),
+  // ]
   // devServer: {
   //   port: 3001,
   //   watchContentBase: true
