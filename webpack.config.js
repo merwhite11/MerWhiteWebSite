@@ -9,7 +9,8 @@ module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   mode: 'development',
   module: {
@@ -51,18 +52,18 @@ module.exports = {
   //     ],
   //   }),
   // ]
-  // devServer: {
+  devServer: {
+    historyApiFallback: true,
   //   port: 3001,
   //   watchContentBase: true
     // contentBase: path.join(__dirname, 'client','/dist'),
     // hot: true,
     // overlay: true,
-    // historyApiFallback: true,
     // host: process.env.HOST
     // proxy: {
     //   '/api': {
     //     target: 'http://localhost:3000',
     //     pathRewrite: {'^/api' : ''}, // In this case we don't pass `api` path
     //   }
-    // }
+    }
 };
