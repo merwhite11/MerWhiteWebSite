@@ -20,7 +20,7 @@ const Home = (props) => {
           <div className="row justify-content-center">
             <WritingContainer></WritingContainer>
             <DanceContainer></DanceContainer>
-            <SinglePage />
+            {/* <SinglePage /> */}
           </div>
         </div>
       );

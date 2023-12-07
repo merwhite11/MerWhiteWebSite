@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Document, Page} from "react-pdf";
 import ReactPDF from '@react-pdf/renderer';
-import pdf from '../../docs/sample.pdf'
+import pdf from '../../docs/gvd.pdf'
 
 function SinglePage() {
   //get total numbers of pages

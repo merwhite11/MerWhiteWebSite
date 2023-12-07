@@ -12,7 +12,10 @@
 }
 
 .pdf-div{
-    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     background-color: #B9D9EB;
     margin-top: 50px;
 }

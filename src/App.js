@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home.jsx'
 import DanceHome from './components/dance/DanceHome.jsx';
 import WritingHome from './components/writing/WritingHome.jsx'
+import SinglePage from './components/pdf/single-page.js'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/* <Route index element={<Home />} /> */}
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
+        <Route path ="/grapevinediaries" element={<SinglePage/>} />
       </Routes>
     </div>
     // </BrowserRouter>
