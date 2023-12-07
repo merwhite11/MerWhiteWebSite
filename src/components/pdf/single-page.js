@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 import {Document, Page} from "react-pdf";
-// import {PDFViewer} from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
+import pdf from '../../docs/sample.pdf'
 
-function SinglePage(props) {
-  const [numPages, setNumpPages] = useState(null);
+function SinglePage() {
+  //get total numbers of pages
+  const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({numPages}) {
-    setNumpages(numPages);
+    setNumPages(numPages);
     setPageNumber(1);
   };
 
@@ -24,15 +25,15 @@ function SinglePage(props) {
     changePage(1);
   };
 
-  const pdf = props;
+  // const pdf = props;
     return (
-      <>
+      <div className="pdf-div">
         <Document
           file={pdf}
-          options={{workerSrc: "/pdf.worker.js"}}
+          // options={{workerSrc: "/pdf.worker.js"}}
           onLoadSuccess={onDocumentLoadSuccess}
         >
-          <Page pageNumber={pageNumber} />
+          <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false}/>
         </Document>
         <div>
           <p>
@@ -53,7 +54,7 @@ function SinglePage(props) {
             Next
           </button>
         </div>
-      </>
+      </div>
     );
 };
 

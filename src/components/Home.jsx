@@ -4,6 +4,12 @@ import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
 
 import ReactPDF from '@react-pdf/renderer';
+import {pdfjs} from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString();
 
 
 import samplePDF from '../../dist/sample.pdf';
@@ -14,7 +20,7 @@ const Home = (props) => {
           <div className="row justify-content-center">
             <WritingContainer></WritingContainer>
             <DanceContainer></DanceContainer>
-            <SinglePage pdf={samplePDF} />
+            <SinglePage />
           </div>
         </div>
       );
