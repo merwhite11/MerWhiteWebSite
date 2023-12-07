@@ -10,11 +10,10 @@ import App from './App';
 //  }
 const container = document.getElementById('app');
 const root = createRoot(container);
-root.render( 
+root.render(
 <React.StrictMode>
     <BrowserRouter>
         <App/>
     </BrowserRouter>
 </React.StrictMode>
 );
-// ReactDOM.render(<App />, document.getElementById('app'));

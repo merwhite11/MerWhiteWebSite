@@ -9,7 +9,8 @@ module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   mode: 'development',
   module: {
@@ -29,23 +30,40 @@ module.exports = {
        use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
         use: ['file-loader'],
       }
     ]
-  }
-  // devServer: {
+  },
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env': {
+  //       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+  //     }
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     template: 'index.html',
+  //   }),
+  //   new CopyWebpackPlugin({
+  //     patterns: [
+  //       { from: './sample.pdf' },
+  //       { from: cMapsDir, to: 'cmaps/' },
+  //       { from: standardFontsDir, to: 'standard_fonts/' },
+  //     ],
+  //   }),
+  // ]
+  devServer: {
+    historyApiFallback: true,
   //   port: 3001,
   //   watchContentBase: true
     // contentBase: path.join(__dirname, 'client','/dist'),
     // hot: true,
     // overlay: true,
-    // historyApiFallback: true,
     // host: process.env.HOST
     // proxy: {
     //   '/api': {
     //     target: 'http://localhost:3000',
     //     pathRewrite: {'^/api' : ''}, // In this case we don't pass `api` path
     //   }
-    // }
+    }
 };
