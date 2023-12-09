@@ -4,8 +4,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home.jsx'
 import DanceHome from './components/dance/DanceHome.jsx';
-import WritingHome from './components/writing/WritingHome.jsx'
-import SinglePage from './components/pdf/single-page.js'
+import WritingHome from './components/writing/WritingHome.jsx';
+import SinglePage from './components/pdf/single-page.js';
+import DoublePage from './components/pdf/double-page.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
         <Route path ="/grapevinediaries" element={<SinglePage/>} />
+        <Route path ="/cuento" element={<DoublePage/>} />
       </Routes>
     </div>
     // </BrowserRouter>

@@ -11,7 +11,7 @@
     border: 3px solid plum
 }
 
-.pdf-div{
+.single-pdf-div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,4 +19,26 @@
     background-color: #B9D9EB;
     margin-top: 50px;
 }
+
+
+.double-pdf-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* flex-direction: row; */
+    /* align-items: center;
+    justify-content: center; */
+    padding: 10px;
+    background-color: #B9D9EB;
+    margin-top: 50px;
+}
+
+.page1{
+    grid-column-start: 1
+}
+.page2{
+    grid-column-start: 2
+}
+
+
+
 

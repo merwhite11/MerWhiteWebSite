@@ -27,7 +27,7 @@ function SinglePage() {
 
   // const pdf = props;
     return (
-      <div className="pdf-div">
+      <div className="single-pdf-div">
         <Document
           file={pdf}
           // options={{workerSrc: "/pdf.worker.js"}}
