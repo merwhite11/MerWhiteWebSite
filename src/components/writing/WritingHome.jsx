@@ -12,7 +12,7 @@ const WritingHome = (props) => {
         navigate(`/${path}`)
     }
     return (
-        <div className="col-md-4">
+        <div className="content-home">
             <div className="card">
                 <div className="card-body">
                     <h2 className="card-title">WRITING HOME</h2>

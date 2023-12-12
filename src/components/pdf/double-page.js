@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
+import { Document, Page, PageLayout } from "react-pdf";
+import layoutDocument from "@react-pdf/layout";
 import pdf from '../../docs/blinking.pdf'
 
-export default function AllPages(props) {
+export default function DoublePage(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -28,9 +29,15 @@ export default function AllPages(props) {
       <Document
         file={pdf}
         onLoadSuccess={onDocumentLoadSuccess}
+        // pageLayout = {twoColumnLeft}
+        // options={{pageLayout:'twoColumnLeft'}}
       >
-        <Page className="page1" pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false}/>
-        <Page className="page2" pageNumber={pageNumber + 1} renderTextLayer={false} renderAnnotationLayer={false}/>
+        <div className="page1">
+          <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false}/>
+        </div>
+        <div className="page2">
+        <Page pageNumber={pageNumber + 1} renderTextLayer={false} renderAnnotationLayer={false}/>
+        </div>
         {/* {Array.from(new Array(numPages), (el, index) => (
           <Page key={`page_${index + 1}`} pageNumber={index + 1} />
         ))} */}
@@ -57,3 +64,4 @@ export default function AllPages(props) {
     </div>
   );
 }
+
