@@ -50,6 +50,11 @@
     border-color: blue;
 }
 
+.dance-tile{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
 
 
 
