@@ -17,7 +17,12 @@ class DanceHome extends React.Component {
         //     }
         // }
 
-        return <DanceList/>
+        return (
+        <div className="dance-page">
+            <h1 className="header">Dance Videos</h1>
+            <DanceList/>
+        </div>
+        )
     }
     _onReady(event) {
         event.target.pauseVideo();

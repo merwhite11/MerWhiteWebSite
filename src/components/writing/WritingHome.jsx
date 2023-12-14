@@ -18,7 +18,6 @@ const WritingHome = (props) => {
                     <h2 className="card-title">WRITING HOME</h2>
                     <p className="card-text" onClick={(e)=>handleClick('grapevinediaries')}>The Grapevine Diaries</p>
                     <p className="card-text" onClick={(e)=>handleClick('cuento')}>Story Twice Told // Cuento Dos Veces Contado</p>
-                    <a href='#' className="btn btn-primary">READ</a>
                 </div>
              </div>
         </div>

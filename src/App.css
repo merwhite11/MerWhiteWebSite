@@ -16,6 +16,13 @@
     font-weight:300
 }
 
+.dance-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B9D9EB
+}
+
 .single-pdf-div{
     display: flex;
     align-items: center;
