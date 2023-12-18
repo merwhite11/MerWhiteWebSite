@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './header/Header.jsx'
 import WritingContainer from './writing/WritingContainer.jsx';
 import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
@@ -16,8 +17,9 @@ import samplePDF from '../../dist/sample.pdf';
 
 const Home = (props) => {
     return(
-        <div className ="container-fluid">
-          <div className="row justify-content-center">
+        <div className ="outer-container">
+          <Header></Header>
+          <div className="components-container">
             <WritingContainer></WritingContainer>
             <DanceContainer></DanceContainer>
             {/* <SinglePage /> */}
