@@ -1,5 +1,7 @@
 import React from 'react';
-import Header from './header/Header.jsx'
+import Header from './header/Header.jsx';
+import ArrowDownLeft from './ArrowDownLeft.jsx';
+import ArrowDownRight from './ArrowDownRight.jsx';
 import WritingContainer from './writing/WritingContainer.jsx';
 import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
@@ -20,6 +22,10 @@ const Home = (props) => {
         <div className ="outer-container">
           <Header></Header>
           <div className="components-container">
+            <div className="arrows-container">
+            <ArrowDownLeft></ArrowDownLeft>
+            <ArrowDownRight></ArrowDownRight>
+            </div>
             <WritingContainer></WritingContainer>
             <DanceContainer></DanceContainer>
             {/* <SinglePage /> */}

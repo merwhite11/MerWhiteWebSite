@@ -7,7 +7,7 @@ const DanceContainer = (props) => {
     const navigate = useNavigate();
     const handleClick = () => navigate('/dance')
     return (
-        <div className="col-md-4">
+        <div className="dance-container">
             <div className="card">
                 <div className="card-body">
                     <h2 className="card-title">DANCE</h2>

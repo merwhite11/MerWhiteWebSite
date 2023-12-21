@@ -68,6 +68,38 @@
     grid-row-start: 3;
     justify-self: center;
 }
+
+.components-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr
+}
+
+.arrows-container{
+    display: grid;
+    grid-column-start: 2;
+    grid-template-columns: 1fr 1fr;
+}
+
+.arrow-down-left{
+    grid-column-start: 1;
+    justify-self: end;
+}
+.arrow-down-right{
+    grid-column-start: 2;
+    justify-self: end;
+}
+.writing-container{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    justify-self: end;
+}
+.dance-container{
+    grid-row-start: 2;
+    grid-column-start: 3;
+    justify-self: start;
+}
+
 .card-body {
     display: flex;
     flex-direction: column;

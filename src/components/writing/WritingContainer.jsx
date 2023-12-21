@@ -8,7 +8,7 @@ const WritingContainer = (props) => {
     const navigate = useNavigate();
     const handleClick = () => navigate('/writing')
     return (
-        <div className="col-md-4">
+        <div className="writing-container">
             <div className="card">
                 <div className="card-body">
                     <h2 className="card-title">WRITING</h2>

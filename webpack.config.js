@@ -31,8 +31,19 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
-        use: ['file-loader'],
-      }
+        type: "asset/resource",
+      },
+      // {
+      //   test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'images/[hash]-[name].[ext]',
+      //       },
+      //     }
+      //   ],
+      // }
     ]
   },
   // plugins: [
