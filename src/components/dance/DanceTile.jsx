@@ -14,16 +14,11 @@ function DanceTile({videoId}) {
     //     event.target.pauseVideo();
     // }
   return (
-    <div className="dance-tile">
-        <div className="card">
-            <div className="card-body">
-                {/* <h2 className="card-title">WRITING</h2> */}
-                {/* <p className="card-text"> */}
+        <div className="dance-tile">
+            <div className="dance-card">
                 <YouTube className = "card-text" videoId={videoId} options={options} id="video"/>
-                {/* </p> */}
             </div>
          </div>
-    </div>
 
 )
 }

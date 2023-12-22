@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import {Document, Page} from "react-pdf";
+import ReactPDF from '@react-pdf/renderer';
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 

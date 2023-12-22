@@ -8,19 +8,10 @@ import DanceList from './DanceList.jsx'
 
 class DanceHome extends React.Component {
     render() {
-        // const options = {
-        //     height: '315',
-        //     width: '560',
-        //     playerVars: {
-        //         autoplay: 1,
-        //         controls: 1
-        //     }
-        // }
-
         return (
-        <div className="dance-page">
-            <h1 className="header">Dance Videos</h1>
-            <DanceList/>
+        <div className="dance-floor-container">
+            <h2 className="dance-floor-header">Dance Floor</h2>
+            <DanceList className="dance-list"/>
         </div>
         )
     }

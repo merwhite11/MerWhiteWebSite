@@ -5,7 +5,7 @@
 } */
 
 /*HOME PAGE */
-
+/*HEADER */
 .outer-container{
     display: grid;
     grid-template-rows: 1fr 3fr;
@@ -68,19 +68,18 @@
     grid-row-start: 3;
     justify-self: center;
 }
+/* MAIN BODY */
 
 .components-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 2fr
 }
-
 .arrows-container{
     display: grid;
     grid-column-start: 2;
     grid-template-columns: 1fr 1fr;
 }
-
 .arrow-down-left{
     grid-column-start: 1;
     justify-self: end;
@@ -100,26 +99,81 @@
     justify-self: start;
 }
 
-.card-body {
-    display: flex;
+/*DANCE HOME */
+
+.dance-floor-container{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    background-color: aliceblue
+}
+.dance-floor-header{
+    align-self: center;
+    justify-self: center
+}
+.dance-list{
+    justify-self: center;
+}
+.dance-card {
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 3px solid plum
+    justify-content: center; */
+    border: 3px solid plum;
+    padding: 2vh
+}
+.dance-tile{
+    display: flex;
+    justify-self: center;
+    padding: 2vh;
 }
 
-.card-text:hover {
+/* WRITING HOME */
+.bookshelf-container{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    margin-left: 10vw;
+    margin-right: 10vh;
+}
+.bookshelf-header{
+    align-self: center;
+    justify-self: center;
+}
+.booklist{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 5vh;
+}
+.book-card{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 2vw;
+    background-color: #F0F8FF
+}
+.book-thumbnail{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    height: 280;
+    width: 280
+}
+.book-info{
+    grid-column-start: 2;
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+.book-title{
+    grid-row-start: 1;
+    margin-top: 2vh;
+
+}
+.book-title:hover {
     background-color: plum;
-    font-weight:300
+    font-weight: 300
+}
+.book-summary{
+    grid-row-start: 2;
 }
 
-.dance-page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #B9D9EB
-}
-
+/* PDFS*/
 .single-pdf-div{
     display: flex;
     align-items: center;
@@ -128,8 +182,6 @@
     background-color: #B9D9EB;
     margin-top: 50px;
 }
-
-
 .double-pdf-div{
     display: flex;
     /* grid-template-columns: 1fr 1fr; */
@@ -142,7 +194,6 @@
     border: 10px;
     border-color: 'green'
 }
-
 .page1{
     grid-column-start: 1;
     border: 5px;
@@ -153,12 +204,5 @@
     border: 5px;
     border-color: blue;
 }
-
-.dance-tile{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
 
 
