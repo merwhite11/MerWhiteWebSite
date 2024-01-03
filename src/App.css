@@ -143,17 +143,25 @@
     grid-template-rows: 1fr 1fr;
     gap: 5vh;
 }
+.book-tile{
+    /* display: flex;
+    justify-self: center; */
+    padding: 2vh;
+}
 .book-card{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    column-gap: 2vw;
-    background-color: #F0F8FF
+    /* column-gap: 2vw; */
+    background-color: #F0F8FF;
+    padding: 2vh;
+    /* justify-items: center; */
 }
 .book-thumbnail{
     grid-column-start: 1;
     grid-row-start: 1;
-    height: 280;
-    width: 280
+    /* align-self: center; */
+    /* height: 280;
+    width: auto */
 }
 .book-info{
     grid-column-start: 2;

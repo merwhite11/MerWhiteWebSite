@@ -5,6 +5,7 @@ import {Document, Page} from "react-pdf";
 import ReactPDF from '@react-pdf/renderer';
 import GVDCover from '../../docs/GVDCover.jpg'
 import BlinkingCover from '../../docs/BlinkingCover.jpg'
+import BookList from './BookList.jsx'
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,7 +19,8 @@ const WritingHome = (props) => {
     return (
         <div className="bookshelf-container">
             <h2 className="bookshelf-header">Book Shelf</h2>
-            <div className="booklist">
+            <BookList className="booklist"/>
+            {/* <div className="booklist">
                 <div className="book-card">
                     <img className="book-thumbnail" height={280} width={280} src={GVDCover}></img>
                     <div className="book-info">
@@ -33,7 +35,7 @@ const WritingHome = (props) => {
                         <div className="book-summary">A memory-inspired short story written in English and Spanish. Explores themes of religion, childhood and the transformation of a story through the filters of time and language.</div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
     )

@@ -7,6 +7,8 @@ import DanceHome from './components/dance/DanceHome.jsx';
 import WritingHome from './components/writing/WritingHome.jsx';
 import SinglePage from './components/pdf/single-page.js';
 import DoublePage from './components/pdf/double-page.js';
+import GVD from './docs/gvd.pdf';
+import Bobby from './docs/Bobby.pdf';
 
 function App() {
   return (
@@ -17,8 +19,9 @@ function App() {
         {/* <Route index element={<Home />} /> */}
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
-        <Route path ="/grapevinediaries" element={<SinglePage/>} />
+        <Route path ="/grapevinediaries" element={<SinglePage doc={GVD}/>} />
         <Route path ="/cuento" element={<DoublePage/>} />
+        <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} />
       </Routes>
     </div>
     // </BrowserRouter>

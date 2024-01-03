@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {Document, Page} from "react-pdf";
 import ReactPDF from '@react-pdf/renderer';
-import pdf from '../../docs/gvd.pdf'
+import GVD from '../../docs/gvd.pdf';
 
-function SinglePage() {
+function SinglePage({doc}) {
   //get total numbers of pages
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
@@ -29,7 +29,7 @@ function SinglePage() {
     return (
       <div className="single-pdf-div">
         <Document
-          file={pdf}
+          file={doc}
           // options={{workerSrc: "/pdf.worker.js"}}
           onLoadSuccess={onDocumentLoadSuccess}
         >
