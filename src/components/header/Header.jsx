@@ -9,8 +9,8 @@ const Header = () => {
       <div className="left-header">Welcome to...</div>
       <div className="title-top">Mer White's</div>
       <div className="title-bottom">Web Site</div>
-      <div className="whosshe">Who's She?</div>
-      <div className="contact" onClick={(e)=>handleClick('contact')}>Contact</div>
+      {/* <div className="whosshe">Who's She?</div> */}
+      <div className="whos-she" onClick={(e)=>handleClick('contact')}>Who's She?</div>
       <div className="sub-title">a medium for my mediums</div>
     </div>
   )

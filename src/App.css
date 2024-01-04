@@ -52,15 +52,10 @@
     font-size: xx-large;
 }
 
-.whosshe{
-    grid-column-start: 3;
-    align-self:end;
-}
-
-.contact{
+.whos-she{
     grid-column-start: 3;
     grid-row-start: 2;
-    align-self: end;
+    align-self: start;
 }
 
 .sub-title{
