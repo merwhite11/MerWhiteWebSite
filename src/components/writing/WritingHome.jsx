@@ -3,8 +3,6 @@ import { useNavigate, BrowserRouter as Router, Routes, Route } from 'react-route
 import SinglePage from '../pdf/single-page.js';
 import {Document, Page} from "react-pdf";
 import ReactPDF from '@react-pdf/renderer';
-import GVDCover from '../../docs/GVDCover.jpg'
-import BlinkingCover from '../../docs/BlinkingCover.jpg'
 import BookList from './BookList.jsx'
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';

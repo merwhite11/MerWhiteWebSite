@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './components/Home.jsx'
+import Home from './components/Home.jsx';
+import Contact from './components/contact/Contact.jsx';
 import DanceHome from './components/dance/DanceHome.jsx';
 import WritingHome from './components/writing/WritingHome.jsx';
 import SinglePage from './components/pdf/single-page.js';
@@ -22,6 +23,7 @@ function App() {
         <Route path ="/grapevinediaries" element={<SinglePage doc={GVD}/>} />
         <Route path ="/cuento" element={<DoublePage/>} />
         <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} />
+        <Route path ="/contact" element={<Contact />} />
       </Routes>
     </div>
     // </BrowserRouter>

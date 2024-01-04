@@ -2,7 +2,7 @@ import React from 'react';
 import BookTile from './BookTile.jsx';
 import GVDCover from '../../docs/GVDCover.jpg';
 import BlinkingCover from '../../docs/BlinkingCover.jpg'
-import BobbyCover from '../../docs/BobbyCover.jpg'
+import BobbyCover from '../../docs/BobbyAndShiloh.jpg'
 
 const BookList = () => {
   var gvdSumm = "You've heard of a winemaker, but have you heard of a grapemaker? This story is the untold story of wine -- the story of the immigrant field laborers that work the vineyards and grow the grapes. Told from the perspective of an American woman who spent her mid-twenties working in vineyards alongside Mexican coworkers, The Grapevine Diaries is a series of anecdotes, journal entries, poems and mini-essays that provide a unique and candid insight into agriculture, immigration, and a job that goes beneath the skin and into the sticky juice within";
