@@ -14,9 +14,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-
-import samplePDF from '../../dist/sample.pdf';
-
 const Home = (props) => {
     return(
         <div className ="outer-container">

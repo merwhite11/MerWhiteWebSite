@@ -10,7 +10,7 @@ class DanceHome extends React.Component {
     render() {
         return (
         <div className="dance-floor-container">
-            <h2 className="dance-floor-header">Dance Floor</h2>
+            <h2 className="subpage-header">Dance Floor</h2>
             <DanceList className="dance-list"/>
         </div>
         )

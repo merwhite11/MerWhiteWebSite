@@ -16,7 +16,7 @@ const WritingHome = (props) => {
     }
     return (
         <div className="bookshelf-container">
-            <h2 className="bookshelf-header">Book Shelf</h2>
+            <h2 className="subpage-header">Book Shelf</h2>
             <BookList className="booklist"/>
             {/* <div className="booklist">
                 <div className="book-card">
