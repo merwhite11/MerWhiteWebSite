@@ -11,7 +11,7 @@ const WritingContainer = (props) => {
     const handleClick = () => navigate('/writing')
     return (
         <div className="writing-container">
-            <div className="card">
+            <div className="card text-center">
                 <div className="card-body">
                     <h2 className="card-title">WRITING</h2>
                     <p className="card-text">Check out my e-books!</p>

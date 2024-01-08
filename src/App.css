@@ -3,33 +3,39 @@
     align-items: center;
     justify-content: center;
 } */
+@font-face {
+    font-family: 'Hyppolit';
+    src: local('Hyppolit'), url('./assets/Hyppolit.ttf')
+}
 
 /*HOME PAGE */
 /*HEADER */
 .outer-container{
     display: grid;
     grid-template-rows: 1fr 3fr;
-    border: 3px solid blueviolet;
+    /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
-    margin-top: 2vh;
-    /* font-family: Hyppolit */
+    /* margin-top: 2vh; */
+    /* font-family: HappinessMood; */
     /* margin-left: 10vw;
     margin-right: 10vh; */
 }
 .subpage-header{
+    margin-top: 3vh;
     align-self: center;
     justify-self: center;
+    font-family: Hyppolit;
+    font-size: x-large;
+    font-stretch: expanded;
 }
 .header{
     display: grid;
     grid-template-rows: 2fr 2fr 1fr;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-areas:
-        "left title right"
-        "left title right"
-        "sub sub sub";
-    border: 3px solid olivedrab;
+    font-family: Hyppolit;
+    font-size: xx-large;
+    /* border: 3px solid olivedrab; */
 }
 
 .left-header{
@@ -68,8 +74,9 @@
 .components-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr
+    grid-template-rows: 35% 65%
 }
+
 .arrows-container{
     display: grid;
     grid-column-start: 2;
@@ -85,13 +92,15 @@
 }
 .writing-container{
     grid-row-start: 2;
-    grid-column-start: 1;
-    justify-self: end;
+    grid-column-start: 2;
+    justify-self: start;
+    margin-left: -6vw;
 }
 .dance-container{
     grid-row-start: 2;
-    grid-column-start: 3;
-    justify-self: start;
+    grid-column-start: 2;
+    justify-self: end;
+    margin-right: -6vw;
 }
 
 /*DANCE HOME */
@@ -100,7 +109,6 @@
     display: grid;
     grid-template-rows: 1fr 4fr;
     background-color: aliceblue;
-    margin-top: 2vh;
 }
 .dance-list{
     justify-self: center;

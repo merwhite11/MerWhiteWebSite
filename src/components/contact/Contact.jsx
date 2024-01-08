@@ -23,7 +23,7 @@ const Contact = () => {
     <Container className="outer-container">
       <h2 className="subpage-header">About Me</h2>
       <Row className="justify-content-center align-items-center">
-        <Col className="col-7">
+        <Col className="col-7 mt-4">
           Hello ! Thanks for visiting my website. Before transitioning to a career in tech, I was working in vineyards which led to the creation of The Grapevine Diaries, which then led to the impetus for building this website. I love languages, studied Comparative Literature in college, and speak French and Spanish. So if you’re a word nerd like me, you can have some fun with the language toggle! My favorite language though, is dance and I’m always working on some DIY dance video which I perform, shoot and edit and then upload to YouTube.
         </Col>
       </Row>
