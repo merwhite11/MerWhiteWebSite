@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
  template: "./src/index.html",
@@ -8,6 +8,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
+    // 'pdf.worker': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.min.js')
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
@@ -28,7 +29,8 @@ module.exports = {
       },
       {
        test: /\.css$/,
-       use: ["style-loader", "css-loader"]
+       use: [
+        "style-loader", "css-loader"]
       },
       {
         test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
@@ -48,6 +50,12 @@ module.exports = {
     ]
   },
   // plugins: [
+  //   new webpack.NormalModuleReplacementPlugin(
+  //     /^pdfjs-dist$/,
+  //     resource => {
+  //         resource.request = path.join(__dirname, './node_modules/pdfjs-dist/webpack');
+  //     },
+  // ),
   //   new webpack.DefinePlugin({
   //     'process.env': {
   //       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
@@ -63,7 +71,7 @@ module.exports = {
   //       { from: standardFontsDir, to: 'standard_fonts/' },
   //     ],
   //   }),
-  // ]
+  // ],
   devServer: {
     historyApiFallback: true,
   //   port: 3001,
