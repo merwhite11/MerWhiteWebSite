@@ -6,7 +6,7 @@ import WritingContainer from './writing/WritingContainer.jsx';
 import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
 
-import { Viewer, Worker } from '@react-pdf-viewer/core';
+// import { Viewer, Worker } from '@react-pdf-viewer/core';
 // import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
 // import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -15,10 +15,11 @@ import { Viewer, Worker } from '@react-pdf-viewer/core';
 import ReactPDF from '@react-pdf/renderer';
 import {pdfjs} from 'react-pdf';
 
-// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-//   'pdfjs-dist/build/pdf.worker.min.js',
-//   import.meta.url,
-// ).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  // "react-pdf/node_modules/pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url,
+).toString();
 
 
 

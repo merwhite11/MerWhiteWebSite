@@ -187,8 +187,11 @@
     justify-content: center;
     padding: 10px;
     background-color: #B9D9EB;
-    margin-top: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    background-color: aliceblue
 }
+
 .double-pdf-div{
     display: flex;
     /* grid-template-columns: 1fr 1fr; */

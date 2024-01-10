@@ -8,7 +8,6 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
-    // 'pdf.worker': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.min.js')
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',

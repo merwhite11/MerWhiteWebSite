@@ -23,8 +23,8 @@ function App() {
         <Route path="/dance" element={<DanceHome />} />
         <Route path ="/grapevinediaries" element={<SinglePage doc={GVD}/>} />
         <Route path ="/cuento" element={<DoublePage/>} />
-        <Route path ="/test" element={<TestPage/>} />
-        {/* <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} /> */}
+        {/* <Route path ="/test" element={<TestPage workerUrl={workerUrl}/>} /> */}
+        <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} />
         <Route path ="/contact" element={<Contact />} />
       </Routes>
     </div>
