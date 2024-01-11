@@ -190,25 +190,25 @@
 }
 .double-pdf-div{
     display: flex;
-    /* grid-template-columns: 1fr 1fr; */
+    background-color: #B9D9EB;
+    grid-template-columns: 1fr 1fr;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    background-color: #B9D9EB;
-    margin-top: 50px;
-    border: 10px;
-    border-color: 'green'
+    padding: 3vh;
 }
-.page1{
-    grid-column-start: 1;
+.pages{
+    display: flex;
+    flex-direction: row;
+    gap: 3vh;
+}
+.page{
+    width: 50%;
+    float: left;
+    /* grid-column-start: 1;
     border: 5px;
-    border-color: green;
+    border-color: green; */
 }
-.page2{
-    grid-column-start: 2;
-    border: 5px;
-    border-color: blue;
-}
+
 
 
