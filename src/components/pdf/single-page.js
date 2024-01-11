@@ -8,10 +8,17 @@ function SinglePage({doc}) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
+  const [zoom, setZoom] = useState(1)
+
   function onDocumentLoadSuccess({numPages}) {
     setNumPages(numPages);
     setPageNumber(1);
+    setZoom(1)
   };
+
+  function handleZoom(amount) {
+    setZoom(amount)
+  }
 
   function changePage(offset) {
     setPageNumber(prevPageNumber => prevPageNumber + offset);
@@ -33,7 +40,12 @@ function SinglePage({doc}) {
           // options={{workerSrc: "/pdf.worker.js"}}
           onLoadSuccess={onDocumentLoadSuccess}
         >
-          <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false}/>
+          <Page
+          pageNumber={pageNumber}
+          renderTextLayer={false}
+          renderAnnotationLayer={false}
+          scale={zoom}
+          />
         </Document>
         <div>
           <p>

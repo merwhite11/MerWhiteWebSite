@@ -133,7 +133,7 @@
     grid-template-rows: 1fr 5fr;
     margin-left: 10vw;
     margin-right: 10vh;
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
 }
 .booklist{
     display: grid;
@@ -185,9 +185,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 2vw;
     background-color: #B9D9EB;
-    margin-top: 50px;
 }
 .double-pdf-div{
     display: flex;
