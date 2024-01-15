@@ -34,17 +34,22 @@ module.exports = {
         test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
         type: "asset/resource",
       },
-      // {
-      //   test: /\.(png|jp(e*)g|svg|gif|pdf)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: 'images/[hash]-[name].[ext]',
-      //       },
-      //     }
-      //   ],
-      // }
+      {
+        test: /\.epub$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/src/docs'
+            },
+          }
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader'],
+      }
     ]
   },
   // plugins: [

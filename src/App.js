@@ -11,6 +11,7 @@ import DoublePage from './components/pdf/double-page.js';
 import TestPage from './components/pdf/test-page'
 import GVD from './docs/gvd.pdf';
 import Bobby from './docs/Bobby.pdf';
+import BobbyAndShiloh from './docs/BobbyAndShiloh.epub'
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path ="/grapevinediaries" element={<SinglePage doc={GVD}/>} />
         <Route path ="/cuento" element={<DoublePage/>} />
         <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} />
-        <Route path ="/test" element={<TestPage doc={Bobby}/>} />
+        <Route path ="/test" element={<TestPage doc={BobbyAndShiloh}/>} />
         <Route path ="/contact" element={<Contact />} />
       </Routes>
     </div>
