@@ -1,0 +1,1 @@
+export const DEMO_URL = '/public/BobbyAndShiloh.epub'

@@ -5,7 +5,7 @@
 } */
 @font-face {
     font-family: 'Hyppolit';
-    src: local('Hyppolit'), url('./assets/Hyppolit.ttf')
+    src: local('HappinessMood'), url('./assets/HappinessMood.ttf')
 }
 
 /*HOME PAGE */
@@ -25,7 +25,7 @@
     margin-top: 3vh;
     align-self: center;
     justify-self: center;
-    font-family: Hyppolit;
+    font-family: HappinessMood;
     font-size: x-large;
     font-stretch: expanded;
 }
@@ -33,7 +33,7 @@
     display: grid;
     grid-template-rows: 2fr 2fr 1fr;
     grid-template-columns: 1fr 2fr 1fr;
-    font-family: Hyppolit;
+    font-family: HappinessMood;
     font-size: xx-large;
     /* border: 3px solid olivedrab; */
 }

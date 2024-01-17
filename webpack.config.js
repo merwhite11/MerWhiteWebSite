@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-
+const webpack = require('webpack');
 
 const htmlPlugin = new HtmlWebPackPlugin({
  template: "./src/index.html",
@@ -52,12 +52,12 @@ module.exports = {
       }
     ]
   },
-  // plugins: [
-  //   new webpack.DefinePlugin({
-  //     'process.env': {
-  //       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-  //     }
-  //   }),
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        PUBLIC_URL: JSON.stringify('/'),
+      }
+    }),
   //   new HtmlWebpackPlugin({
   //     template: 'index.html',
   //   }),
@@ -68,7 +68,7 @@ module.exports = {
   //       { from: standardFontsDir, to: 'standard_fonts/' },
   //     ],
   //   }),
-  // ]
+  ],
   devServer: {
     historyApiFallback: true,
   //   port: 3001,

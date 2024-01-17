@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
-import { ReactReader } from 'react-reader'
+import React, { useState } from 'react';
+import { ReactReader } from 'react-reader';
 
+import {DEMO_URL} from '../config';
+
+const epubUrl = process.env.PUBLIC_URL + 'BobbyAndShiloh_1.epub';
 
 const TestPage = ({doc}) => {
   const [location, setLocation] = useState(null)
@@ -10,7 +13,7 @@ const TestPage = ({doc}) => {
   return (
     <div style={{ height: '100vh' }}>
       <ReactReader
-        url="../../docs/BobbyAndShiloh.epub"
+        url= {epubUrl}
         location={location}
         locationChanged={(epubcfi) => setLocation(epubcfi)}
       />
