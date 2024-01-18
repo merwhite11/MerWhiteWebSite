@@ -3,7 +3,7 @@ import { ReactReader } from 'react-reader';
 
 import {DEMO_URL} from '../config';
 
-const epubUrl = process.env.PUBLIC_URL + 'BobbyAndShiloh_1.epub';
+const epubUrl = process.env.PUBLIC_URL + 'Blinking.epub';
 
 const TestPage = ({doc}) => {
   const [location, setLocation] = useState(null)
