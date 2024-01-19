@@ -181,6 +181,18 @@
 }
 
 /* PDFS*/
+
+.reader-container{
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    display: grid;
+    width: 50vw;
+    height: 100vh;
+}
+.reader{
+    justify-self: center;
+}
 .single-pdf-div{
     display: flex;
     align-items: center;

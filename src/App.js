@@ -8,10 +8,11 @@ import DanceHome from './components/dance/DanceHome.jsx';
 import WritingHome from './components/writing/WritingHome.jsx';
 import SinglePage from './components/pdf/single-page.js';
 import DoublePage from './components/pdf/double-page.js';
-import TestPage from './components/pdf/test-page'
+import TestPage from './components/pdf/test-page';
+import EpubViewer from './components/pdf/test-page-2';
 import GVD from './docs/gvd.pdf';
-import Bobby from './docs/Bobby.pdf';
-import BobbyAndShiloh from './docs/BobbyAndShiloh.epub'
+// import Bobby from './docs/Bobby.pdf';
+// import BobbyAndShiloh from './docs/BobbyAndShiloh.epub'
 
 function App() {
   return (
@@ -22,10 +23,10 @@ function App() {
         {/* <Route index element={<Home />} /> */}
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
-        <Route path ="/grapevinediaries" element={<SinglePage doc={GVD}/>} />
-        <Route path ="/cuento" element={<DoublePage/>} />
-        <Route path ="/bobby" element={<SinglePage doc={Bobby}/>} />
-        <Route path ="/test" element={<TestPage doc={BobbyAndShiloh}/>} />
+        <Route path ="/grapevinediaries" element={<TestPage doc={'GVD'}/>} />
+        <Route path ="/cuento" element={<TestPage doc={'Blinking'}/>} />
+        <Route path ="/bobby" element={<TestPage doc={'BobbyAndShiloh'}/>} />
+        <Route path ="/test" element={<EpubViewer doc={'BobbyAndShiloh'}/>} />
         <Route path ="/contact" element={<Contact />} />
       </Routes>
     </div>
