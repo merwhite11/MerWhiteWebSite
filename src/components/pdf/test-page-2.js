@@ -1,15 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import ePub from 'epubjs';
 
-const EpubViewer = ({ doc }) => {
-  const epubUrl = process.env.PUBLIC_URL + `${doc}.epub`;
+const EpubViewer = ({doc}) => {
   const viewerRef = useRef(null);
 
   useEffect(() => {
+    const epubUrl = process.env.PUBLIC_URL + `${doc}.epub`;
     const initEpubViewer = async () => {
       const book = await ePub(epubUrl);
+      // const rendition = book.renderTo("area", { flow: "paginated", width: "900", height: "600" });
 
-      book.renderTo(viewerRef.current, { width: '70vw', height: '100vh' });
+      const rendition = book.renderTo("viewer", {height: "100vh", width: "50vw", spread: "always"})
+      // const rendition = book.renderTo(viewerRef.current);
+      const displayed = rendition.display();
+
 
       // Optional: Handle navigation events (e.g., next page, previous page)
       book.on('book:pageChanged', ({ currentPage }) => {
@@ -23,9 +27,9 @@ const EpubViewer = ({ doc }) => {
     };
 
     initEpubViewer();
-  }, [epubUrl]);
+  }, []);
 
-  return <div ref={viewerRef} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={viewerRef} style={{ width: '50vw', height: '100vh' }} />;
 };
 
 export default EpubViewer;

@@ -136,9 +136,10 @@
     /* margin-top: 2vh; */
 }
 .booklist{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 5vh;
+    display: flex;
+    /* display: grid;
+    grid-template-rows: 1fr 1fr; */
+    /* gap: 5vh; */
     margin-left: 10vw;
     margin-right: 10vw;
 }
@@ -153,6 +154,7 @@
     /* column-gap: 2vw; */
     background-color: #F0F8FF;
     padding: 2vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* justify-items: center; */
 }
 .book-thumbnail{
@@ -189,9 +191,14 @@
     display: grid;
     width: 50vw;
     height: 100vh;
+    margin-left: 25vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
 }
 .reader{
     justify-self: center;
+    margin-left: 40vw;
 }
 .single-pdf-div{
     display: flex;

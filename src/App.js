@@ -23,9 +23,9 @@ function App() {
         {/* <Route index element={<Home />} /> */}
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
-        <Route path ="/grapevinediaries" element={<TestPage doc={'GVD'}/>} />
-        <Route path ="/cuento" element={<TestPage doc={'Blinking'}/>} />
-        <Route path ="/bobby" element={<TestPage doc={'BobbyAndShiloh'}/>} />
+        <Route path ="/grapevinediaries" element={<TestPage doc={'GVD'} title={'The Grapevine Diaries'}/>} />
+        <Route path ="/cuento" element={<TestPage doc={'Blinking'} title={'Story Twice Told // Cuento Dos Veces Contado'}/>} />
+        <Route path ="/bobby" element={<TestPage doc={'BobbyAndShiloh'} title={'Bobby And Shiloh Save The Night'}/>} />
         <Route path ="/test" element={<EpubViewer doc={'BobbyAndShiloh'}/>} />
         <Route path ="/contact" element={<Contact />} />
       </Routes>
