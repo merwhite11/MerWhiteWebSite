@@ -26,7 +26,7 @@ function App() {
         <Route path ="/grapevinediaries" element={<TestPage doc={'GVD'} title={'The Grapevine Diaries'}/>} />
         <Route path ="/cuento" element={<TestPage doc={'Blinking'} title={'Story Twice Told // Cuento Dos Veces Contado'}/>} />
         <Route path ="/bobby" element={<TestPage doc={'BobbyAndShiloh'} title={'Bobby And Shiloh Save The Night'}/>} />
-        <Route path ="/test" element={<EpubViewer doc={'BobbyAndShiloh'}/>} />
+        <Route path ="/test" element={<TestPage doc={'unzipped_Alice'}/>} />
         <Route path ="/contact" element={<Contact />} />
       </Routes>
     </div>

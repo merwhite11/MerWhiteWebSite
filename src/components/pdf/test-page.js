@@ -6,7 +6,8 @@ import { DEMO_URL } from '../config';
 
 
 const TestPage = ({ doc, title }) => {
-  const epubUrl = process.env.PUBLIC_URL + `${doc}.epub`;
+  // const epubUrl = process.env.PUBLIC_URL + `${doc}.epub`;
+  const epubUrl = process.env.PUBLIC_URL + 'unzipped_Alice/META-INF';
   const [location, setLocation] = useState(null);
   const [firstRenderDone, setFirstRenderDone] = useState(false)
   const renditionRef = useRef(null)
