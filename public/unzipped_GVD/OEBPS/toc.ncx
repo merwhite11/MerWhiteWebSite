@@ -127,9 +127,28 @@
 <navMap>
 <navPoint id="navPoint-1" playOrder="1">
   <navLabel>
-    <text>Start</text>
+    <text>The Grapevine Diaries</text>
   </navLabel>
-  <content src="Text/glossary.xhtml" />
+  <content src="./Text/Contents.xhtml#pgepubid00000" />
+</navPoint>
+<navPoint id="np-2" playOrder="9">
+  <navLabel>
+    <text>Published January 18, 2022</text>
+  </navLabel>
+  <content src="./Text/Contents.xhtml#pgepubid00001"/>
+</navPoint>
+<navPoint id="np-3" playOrder="10">
+  <navLabel>
+    <text>Contents</text>
+  </navLabel>
+  <content src="./Text/Contents.xhtml#pgepubid00002"/>
+</navPoint>
+</navPoint>
+<navPoint id="np-4" playOrder="11">
+  <navLabel>
+    <text>Glossary</text>
+  </navLabel>
+  <content src="./Text/Glossary.xhtml#pgepubid00003"/>
 </navPoint>
 </navMap>
 </ncx>
