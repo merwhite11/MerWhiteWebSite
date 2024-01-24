@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<package xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="id">
+  <metadata>
+    <dc:rights>Public domain in the USA.</dc:rights>
+    <dc:identifier id="id">http://www.gutenberg.org/11</dc:identifier>
+    <dc:creator id="author_0">Lewis Carroll</dc:creator>
+    <meta property="file-as" refines="#author_0">Carroll, Lewis</meta>
+    <meta property="role" refines="#author_0" scheme="marc:relators">aut</meta>
+    <dc:title>The Grapevine Diaries</dc:title>
+    <dc:language>en</dc:language>
+    <dc:subject>Memoir</dc:subject>
+    <dc:subject>Agriculture</dc:subject>
+    <dc:date>2008-06-27</dc:date>
+    <meta property="dcterms:modified">2023-10-01T07:32:26Z</meta>
+    <dc:source>https://www.gutenberg.org/files/11/11-h/11-h.htm</dc:source>
+    <meta name="cover" content="id-3687803259850171647"/>
+  </metadata>
+  <manifest>
+    <!--Image: 800 x 1104 size=104775 -->
+    <item href="9171285112962905380_cover.jpg" id="id-3687803259850171647" media-type="image/jpeg" properties="cover-image"/>
+    <item href="pgepub.css" id="item1" media-type="text/css"/>
+    <item href="0.css" id="item2" media-type="text/css"/>
+    <item href="1.css" id="item3" media-type="text/css"/>
+    <!--Chunk: size=3974 Split on div.chapter-->
+    <item href="890231480751205683_11-h-0.htm.xhtml" id="pg-header" media-type="application/xhtml+xml"/>
+    <!--Chunk: size=12527 Split on div.chapter-->
+    <item href="890231480751205683_11-h-1.htm.xhtml" id="item4" media-type="application/xhtml+xml"/>
+    <!--Chunk: size=11904 Split on div.chapter-->
+
+  </manifest>
+</package>

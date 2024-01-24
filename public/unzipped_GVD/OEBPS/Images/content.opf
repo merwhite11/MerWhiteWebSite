@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:opf="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookID">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <dc:identifier id="BookID" opf:scheme="isbn">978-3-86680-192-9</dc:identifier>
+   <dc:identifier>3b622266-b838-4003-bcb8-b126ee6ae1a2</dc:identifier>
+   <dc:title>The title</dc:title>
+   <dc:language>fr</dc:language>
+   <dc:publisher>The publisher</dc:publisher>
+   <dc:creator>The author</dc:creator>
+   <dc:contributor>A contributor</dc:contributor>
+   <dc:description>A description</dc:description>
+   <dc:subject>A subject of the publication</dc:subject>
+   <dc:subject>Another subject of the publication</dc:subject>
+   <dc:rights>© copyright notice</dc:rights>
+   <meta property="dcterms:modified">2020-01-01T01:01:01Z</meta>
+  </metadata>
+  <manifest>
+   <item id="coverimage" href="Images/cover-image.png" media-type="image/png" properties="cover-image"/>
+   <!-- <item id="cover" href="Text/cover.xhtml" media-type="application/xhtml+xml"/>
+   <item id="toc" href="toc.html" media-type="application/xhtml+xml" properties="nav"/> -->
+   <item id="glossary" href="Text/glossary.xhtml" media-type="application/xhtml+xml"/>
+   <!-- <item id="chapter-2" href="Text/chapter-2.xhtml" media-type="application/xhtml+xml"/>
+   <item id="css" href="Styles/publication.css" media-type="text/css"/>
+   <item id="font1" href="Fonts/Andada-Italic.otf" media-type="application/vnd.ms-opentype"/>
+   <item id="font2" href="Fonts/Andada-Regular.otf" media-type="application/vnd.ms-opentype"/>
+   <item id="glyph" href="Images/glyph.png" media-type="image/png"/> -->
+  </manifest>
+  <!-- <spine>
+   <itemref idref="cover"/>
+   <itemref idref="toc"/>
+   <itemref idref="chapter-1"/>
+   <itemref idref="chapter-2"/>
+  </spine> -->
+</package>
