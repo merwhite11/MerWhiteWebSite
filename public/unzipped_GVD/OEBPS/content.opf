@@ -17,16 +17,32 @@
     <meta name="cover" content="id-3687803259850171647"/>
   </metadata>
   <manifest>
-    <!--Image: 800 x 1104 size=104775 -->
-    <item href="9171285112962905380_cover.jpg" id="id-3687803259850171647" media-type="image/jpeg" properties="cover-image"/>
+    <!-- <Image: 800 x 1104 size=104775> -->
+    <!-- <item href="9171285112962905380_cover.jpg" id="id-3687803259850171647" media-type="image/jpeg" properties="cover-image"/> -->
     <item href="pgepub.css" id="item1" media-type="text/css"/>
     <item href="0.css" id="item2" media-type="text/css"/>
     <item href="1.css" id="item3" media-type="text/css"/>
-    <!--Chunk: size=3974 Split on div.chapter-->
-    <item href="890231480751205683_11-h-0.htm.xhtml" id="pg-header" media-type="application/xhtml+xml"/>
-    <!--Chunk: size=12527 Split on div.chapter-->
-    <item href="890231480751205683_11-h-1.htm.xhtml" id="item4" media-type="application/xhtml+xml"/>
-    <!--Chunk: size=11904 Split on div.chapter-->
-
+    <item href="Text/glossary.xhtml" id="glossary" media-type="application/xhtml+xml"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
   </manifest>
+    <spine toc="ncx">
+    <itemref idref="glossary"/>
+  </spine>
 </package>
+</package>
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<package version="2.0" unique-identifier="BookId" xmlns="http://www.idpf.org/2007/opf">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:identifier opf:scheme="UUID" id="BookId">urn:uuid:ebc5754f-8427-4114-8613-aebc8ce7bb9e</dc:identifier>
+    <dc:language>en</dc:language>
+    <dc:title>[Title here]</dc:title>
+  </metadata>
+  <manifest>
+    <item id="Section0001.xhtml" href="Text/glossary.xhtml" media-type="application/xhtml+xml"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="Section0001.xhtml"/>
+  </spine>
+</package> -->
