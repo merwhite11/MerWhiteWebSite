@@ -31,7 +31,7 @@
 }
 .header{
     display: grid;
-    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-rows: 2fr 2fr;
     grid-template-columns: 1fr 2fr 1fr;
     font-family: HappinessMood;
     font-size: xx-large;
@@ -39,39 +39,58 @@
 }
 
 .left-header{
-    grid-row-start: 2;
-    justify-self: right;
-    font-size: x-large;
+    grid-row-start: 1;
+    display: flex;
+    margin-top: 20vh;
+    gap: 2vw
 }
 
-.title-top{
+.left-header-image{
+    width: 100%;
+    margin-left: 5vw
+}
+
+.title{
     grid-column-start: 2;
     justify-self: center;
-    padding: 2vh;
-    font-size: xx-large
 }
 
-.title-bottom{
+.title-image{
+    justify-self: center;
+    padding: 2vh;
+    width: 70%;
+    margin-left: 9vw;
+    /* font-size: xx-large */
+}
+
+/* .title{
     grid-column-start: 2;
     grid-row: 2;
     justify-self: center;
     font-size: xx-large;
-}
+} */
 
 .whos-she{
     grid-column-start: 3;
-    grid-row-start: 2;
+    grid-row-start: 1;
     align-self: start;
+    margin-top: 15vh;
+    padding-right: 5vw;
+}
+
+.whos-she-image{
+    width: 100%;
 }
 
 .sub-title{
     grid-column-start: 2;
-    grid-row-start: 3;
+    grid-row-start: 2;
     justify-self: center;
 }
 /* MAIN BODY */
 
 .components-container{
+    grid-row-start: 2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 35% 65%
