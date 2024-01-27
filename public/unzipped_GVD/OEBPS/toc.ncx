@@ -61,5 +61,26 @@
       </navLabel>
       <content src="./Text/Spring.xhtml#pgepubid00006"/>
     </navPoint>
+
+    <navPoint id="navpoint-7" playOrder="15">
+      <navLabel>
+        <text>Summer</text>
+      </navLabel>
+      <content src="./Text/Summer.xhtml#pgepubid00007"/>
+    </navPoint>
+
+    <navPoint id="navpoint-8" playOrder="16">
+      <navLabel>
+        <text>Fall</text>
+      </navLabel>
+      <content src="./Text/Fall.xhtml#pgepubid00008"/>
+    </navPoint>
+
+     <navPoint id="navpoint-9" playOrder="17">
+      <navLabel>
+        <text>Epilogue</text>
+      </navLabel>
+      <content src="./Text/Epilogue.xhtml#pgepubid00008"/>
+    </navPoint>
   </navMap>
 </ncx>

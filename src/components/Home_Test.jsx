@@ -16,23 +16,21 @@ import { pdfjs } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-const Home = (props) => {
+const Home_Test = (props) => {
   return (
     <div className="outer-container">
-      <div className="header-container">
-        <Header className="header"></Header>
-      </div>
+      <Header></Header>
       <div className="components-container">
+
         <div className="arrows-container">
           <ArrowDownLeft></ArrowDownLeft>
           <ArrowDownRight></ArrowDownRight>
         </div>
         <WritingContainer></WritingContainer>
         <DanceContainer></DanceContainer>
-        {/* <SinglePage /> */}
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Home_Test;
