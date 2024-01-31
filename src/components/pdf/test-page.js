@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ReactReader } from 'react-reader';
+import { ReactReader, EpubView } from 'react-reader';
 import { Container } from 'react-bootstrap'
 
 import { DEMO_URL } from '../config';
