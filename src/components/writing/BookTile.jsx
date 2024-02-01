@@ -7,6 +7,7 @@ function BookTile({cover, summary, path, title}) {
     const handleClick = (path) => {
         navigate(`/${path}`)
     }
+
   return (
     <div className="book-tile">
         <div className="book-card">
