@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import BookTile from './BookTile.jsx';
 import GVDCover from '../../docs/GVDCover.jpg';
 import BlinkingCover from '../../docs/BlinkingCover.jpg'
@@ -10,15 +10,44 @@ const BookList = () => {
   var blinkingSumm = "A memory-inspired short story written in English and Spanish. Explores themes of religion, childhood and the transformation of a story through the filters of time and language."
   var bobbySum = "A short short story inspired by real life, a love for bikes and the streets of San Francisco."
   const books = [
-  [GVDCover, gvdSumm, 'grapevinediaries', 'The Grapevine Diaries'],
-  [BlinkingCover, blinkingSumm, 'cuento', 'Story Twice Told // Cuento Dos Veces Contado'], [BobbyCover, bobbySum, 'bobby', 'Bobby & Shiloh Save The Night']]
+    [GVDCover, gvdSumm, 'grapevinediaries', 'The Grapevine Diaries'],
+    [BlinkingCover, blinkingSumm, 'cuento', 'Story Twice Told // Cuento Dos Veces Contado'], [BobbyCover, bobbySum, 'bobby', 'Bobby & Shiloh Save The Night']]
 
-  return books.map((book) => <BookTile
-  cover={book[0]}
-  summary={book[1]}
-  path={book[2]}
-  title={book[3]}
-  />)
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  let img = (
+    <img
+    className="book-thumbnail"
+    height={200}
+    width={'auto'}
+    src={BlinkingCover}></img>
+  )
+
+  return (books.map((book) => {
+
+    <div className="book-tile">
+      <div className="book-card">
+        <img className="book-thumbnail" height={200} width={'auto'} src={cover}></img>
+        <div className="book-info">
+          <h4 className="book-title" onClick={(e) => handleClick(path)}>{title}</h4>
+          <div className="book-summary">{summary}</div>
+        </div>
+      </div>
+    </div>
+  }
+  ))
 
 }
+
+
+  // return books.map((book) => <BookTile
+  // cover={waitForImage(book[0])}
+  // summary={book[1]}
+  // path={book[2]}
+  // title={book[3]}
+  // />)
+
+
+
+
 export default BookList;

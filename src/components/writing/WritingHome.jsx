@@ -3,7 +3,8 @@ import { useNavigate, BrowserRouter as Router, Routes, Route } from 'react-route
 import SinglePage from '../pdf/single-page.js';
 import {Document, Page} from "react-pdf";
 import ReactPDF from '@react-pdf/renderer';
-import BookList from './BookList.jsx'
+import BookList from './BookList.jsx';
+import BookListTest from './BookListTest.jsx'
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,7 +18,7 @@ const WritingHome = (props) => {
     return (
         <div className="bookshelf-container">
             <h2 className="subpage-header">Book Shelf</h2>
-            <BookList className="booklist"/>
+            <BookListTest className="booklist"/>
         </div>
 
     )
