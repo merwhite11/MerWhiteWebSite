@@ -10,6 +10,7 @@ import WritingHome from './components/writing/WritingHome.jsx';
 import SinglePage from './components/pdf/single-page.js';
 import DoublePage from './components/pdf/double-page.js';
 import TestPage from './components/pdf/test-page';
+import Example from './components/pdf/example'
 import EpubViewer from './components/pdf/test-page-2';
 import GVD from './docs/gvd.pdf';
 // import Bobby from './docs/Bobby.pdf';
