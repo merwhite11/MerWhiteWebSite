@@ -11,7 +11,7 @@ const TestPage = ({ doc, title }) => {
 
   const epubUrl = process.env.PUBLIC_URL + `${doc}`;
   const [location, setLocation] = useLocalStorageState('book-loc', 0);
-  const rendition = useRef(undefined)
+  const rendition = useRef<Rendition | undefined>(undefined)
   // const [largeText, setLargeText] = useState(false);
   const [size, setSize] = useState(100)
 
@@ -20,6 +20,7 @@ const TestPage = ({ doc, title }) => {
   }
 
   useEffect(() => {
+    console.log(rendition)
     rendition.current?.themes.fontSize(`${size}%`)
   }, [size])
 
