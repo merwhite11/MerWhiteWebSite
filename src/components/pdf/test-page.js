@@ -13,7 +13,37 @@ const TestPage = ({ doc, title }) => {
   const [location, setLocation] = useLocalStorageState('book-loc', 0);
   const rendition = useRef(null)
   const [largeText, setLargeText] = useState(false);
+  const [selections, setSelections] = useState([]);
   const [size, setSize] = useState(100)
+
+  useEffect(() => {
+    if (rendition.current) {
+      function setRenderSelection(cfiRange, contents) {
+        if (rendition) {
+          setSelections((list) =>
+            list.concat({
+              text: rendition.getRange(cfiRange).toString(),
+              cfiRange,
+            })
+          )
+          rendition.annotations.add(
+            'highlight',
+            cfiRange,
+            {},
+            undefined,
+            'hl',
+            { fill: 'red', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
+          )
+          const selection = contents.window.getSelection()
+          selection?.removeAllRanges()
+        }
+      }
+      rendition.on('selected', setRenderSelection)
+      return () => {
+        rendition?.off('selected', setRenderSelection)
+      }
+    }
+  }, [setSelections, rendition])
 
   useEffect(() => {
     if (rendition.current) {
@@ -34,8 +64,7 @@ const TestPage = ({ doc, title }) => {
         {/* <button onClick={() => changeSize(Math.max(80, size - 10))}>-</button>
         <span>Current size: {size}%</span>
         <button onClick={() => changeSize(Math.max(80, size + 10))}>+</button> */}
-          <button onClick={() => setLargeText(!largeText)} className="btn">
-            Toggle font-size
+          <button onClick={() => setLargeText(!largeText)} className="btn">{largeText? 'Decrease font-size' : 'Increase font-size'}
           </button>
       </div>
 

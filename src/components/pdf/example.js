@@ -1,37 +1,116 @@
-import { Contents, Rendition } from 'epubjs'
 import React, { useState, useRef, useEffect } from 'react';
 import { ReactReader, EpubView } from 'react-reader';
+import { Container } from 'react-bootstrap';
 import useLocalStorageState from 'use-local-storage-state';
-// type Props = {
-//   title: string
-//   actions?: ReactNode
-//   above?: ReactNode
-//   children: ReactNode
-// }
+import { Contents, Rendition } from 'epubjs';
+// import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
 
-export const Example = ({doc, title}) => {
+import { DEMO_URL } from '../config';
+
+
+const TestPage = ({ doc, title }) => {
+
   const epubUrl = process.env.PUBLIC_URL + `${doc}`;
-  // const epubUrl = "https://react-reader.metabits.no/files/alice.epub"
-  // const [location, setLocation] = useLocalStorageState('book-loc', 0);
   const [location, setLocation] = useLocalStorageState('book-loc', 0);
-  const rendition = useRef<Rendition | undefined>(undefined)
+  const rendition = useRef(null)
   const [largeText, setLargeText] = useState(false);
-
-  const renditionRef = useRef<Rendition | null>(null);
+  const [rend, setRend] = useState(null)
+  const [selections, setSelections] = useState([]);
+  const [size, setSize] = useState(100)
 
   useEffect(() => {
-    const book = new ePub(epubUrl); // Instantiate the ePub object with your EPUB file path
-    const rendition = book.renderTo("reader-container"); // Render to an HTML element
+    if (rend) {
+      console.log('rendition', rendition)
+      function setRenderSelection(cfiRange, contents) {
+        if (rend) {
+          console.log('rend', rend)
+          setSelections((list) =>
+            list.concat({
+              text: rendition.current.getRange(cfiRange).toString(),
+              cfiRange,
+            })
+          )
+          rendition.annotations.add(
+            'highlight',
+            cfiRange,
+            {},
+            undefined,
+            'hl',
+            { fill: 'red', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
+          )
+          const selection = contents.window.getSelection()
+          selection?.removeAllRanges()
+        }
+      }
+      rendition.on('selected', setRenderSelection)
+      return () => {
+        rendition?.off('selected', setRenderSelection)
+      }
+    }
+  }, [setSelections, rendition])
 
-    renditionRef.current = rendition;
+  useEffect(() => {
+    if (rendition.current) {
+      console.log(rendition.current);
+      rendition.current.themes.fontSize(largeText ? '140%' : '100%');
+    }
+  }, [largeText]);
 
-    return () => {
-      renditionRef.current?.destroy(); // Cleanup on unmount
-    };
-  }, []); // Run only once on component mount
+  useEffect(() => {
+    if (rendition.current) {
+      rendition.current.themes.fontSize(largeText ? '140%' : '100%');
+    }
+  }, [rendition, largeText]);
 
-  // Other component logic...
+  return (
+    <div className="container">
+      <div className="row gap-4">
+        <div className="col-12 d-flex justify-content-between align-items-center gap-2">
+          <div className="col-md-10 border border-secondary bg-white min-height-100 p-2 rounded">
+            <h4>Selections</h4>
+            <ul class="list-unstyled border-top border-stone-400">
+            {selections.map(({ text, cfiRange }, i) => (
+              <li key={i} className="p-2">
+                <span>{text}</span>
+                </li>
+            ))}
+            </ul>
+          </div>
+          <button onClick={() => setLargeText(!largeText)} className="btn btn-light">
+            {largeText ? 'Smaller font' : 'Bigger font'}
+          </button>
+        </div>
 
-};
+        <div className="col-md-12 aspect-ratio aspect-ratio-3x4 overflow-hidden d-flex justify-content-center align-items-center">
+          <div className="reader-container">
+            <ReactReader
+              // className="reader"
+              title={title}
+              url={epubUrl}
+              location={location}
+              locationChanged={(loc) => setLocation(loc)}
+              getRendition={(r) => {
+                setRend(r)
+                console.log('rendition', r)
 
-export default Example;
+                rendition.current = r
+                r.hooks.content.register((contents) => {
+                  const body = contents.window.document.querySelector('body')
+                  if (body) {
+                    body.oncontextmenu = () => {
+                      return false
+                    }
+                  }
+                })
+                r.themes.fontSize(largeText ? '140%' : '100%')
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  )
+}
+
+export default TestPage;

@@ -25,7 +25,7 @@ function App() {
         {/* <Route index element={<Home />} /> */}
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
-        <Route path ="/grapevinediaries" element={<TestPage doc={'unzipped_GVD/META-INF'} title={'The Grapevine Diaries'}/>} />
+        <Route path ="/grapevinediaries" element={<Example doc={'unzipped_GVD/META-INF'} title={'The Grapevine Diaries'}/>} />
         <Route path ="/cuento" element={<TestPage doc={'Blinking.epub'} title={'Story Twice Told // Cuento Dos Veces Contado'}/>} />
         <Route path ="/bobby" element={<TestPage doc={'BobbyAndShiloh.epub'} title={'Bobby And Shiloh Save The Night'}/>} />
         <Route path ="/test" element={<TestPage doc={'unzipped_Alice/META-INF'} title={'Alice in Wonderland'}/>} />
