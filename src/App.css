@@ -18,7 +18,7 @@
     /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
-    border: 3px solid aqua;
+    /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
     /* font-family: HappinessMood; */
     /* margin-left: 10vw;
@@ -39,7 +39,7 @@
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 2fr 1fr;
-    border: 3px solid olivedrab;
+    /* border: 3px solid olivedrab; */
     font-family: HappinessMood;
     font-size: x-large;
     font-stretch: expanded;

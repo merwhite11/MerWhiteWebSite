@@ -15,39 +15,47 @@ const TestPage = ({ doc, title }) => {
   const rendition = useRef(null)
   const [largeText, setLargeText] = useState(false);
   const [rend, setRend] = useState(null)
+  // const [selections, setSelections] = useState(storedSelections);
   const [selections, setSelections] = useState([]);
+  // const storedSelections = JSON.parse(localStorage.getItem('selection')) || [];
   const [size, setSize] = useState(100)
 
+  const addSelection = (newSelection) => {
+    console.log('newSelection', newSelection)
+    const updatedSelections = [...selections, newSelection];
+    setSelections(updatedSelections);
+    localStorage.setItem('selections', JSON.stringify(updatedSelections))
+  }
   useEffect(() => {
     if (rend) {
       console.log('rendition', rendition)
       function setRenderSelection(cfiRange, contents) {
         if (rend) {
-          console.log('rend', rend)
-          setSelections((list) =>
-            list.concat({
-              text: rendition.current.getRange(cfiRange).toString(),
-              cfiRange,
-            })
-          )
-          rendition.annotations.add(
+            setSelections((list) =>
+              list.concat({
+                text: rend.getRange(cfiRange).toString(),
+                cfiRange,
+              })
+            )
+          rend.annotations.add(
             'highlight',
             cfiRange,
             {},
             undefined,
             'hl',
-            { fill: 'red', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
-          )
-          const selection = contents.window.getSelection()
+            { fill: 'grey', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
+            )
+            const selection = contents.window.getSelection()
+            console.log(selection)
           selection?.removeAllRanges()
         }
       }
-      rendition.on('selected', setRenderSelection)
+      rend.on('selected', setRenderSelection)
       return () => {
-        rendition?.off('selected', setRenderSelection)
+        rend?.off('selected', setRenderSelection)
       }
     }
-  }, [setSelections, rendition])
+  }, [setSelections, rend])
 
   useEffect(() => {
     if (rendition.current) {
