@@ -15,9 +15,10 @@ const TestPage = ({ doc, title }) => {
   const rendition = useRef(null)
   const [largeText, setLargeText] = useState(false);
   const [rend, setRend] = useState(null)
-  // const [selections, setSelections] = useState(storedSelections);
-  const [selections, setSelections] = useState([]);
-  // const storedSelections = JSON.parse(localStorage.getItem('selection')) || [];
+  const [selections, setSelections] = useLocalStorageState('selections', []);
+  // const [selections, setSelections] = useState([]);
+  // const [storedSelections, setStoredSelections] = useState([])
+  const storedSelections = JSON.parse(localStorage.getItem('selections')) || [];
   const [size, setSize] = useState(100)
 
   const addSelection = (newSelection) => {
@@ -26,6 +27,11 @@ const TestPage = ({ doc, title }) => {
     setSelections(updatedSelections);
     localStorage.setItem('selections', JSON.stringify(updatedSelections))
   }
+  useEffect(() => {
+    console.log('selections', selections)
+    localStorage.setItem('selections', JSON.stringify(selections))
+  }, [selections])
+
   useEffect(() => {
     if (rend) {
       console.log('rendition', rendition)
@@ -37,6 +43,7 @@ const TestPage = ({ doc, title }) => {
                 cfiRange,
               })
             )
+            console.log('selections', selections)
           rend.annotations.add(
             'highlight',
             cfiRange,
@@ -77,7 +84,7 @@ const TestPage = ({ doc, title }) => {
           <div className="col-md-10 border border-secondary bg-white min-height-100 p-2 rounded">
             <h4>Selections</h4>
             <ul class="list-unstyled border-top border-stone-400">
-            {selections.map(({ text, cfiRange }, i) => (
+            {selections?.map(({ text, cfiRange }, i) => (
               <li key={i} className="p-2">
                 <span>{text}</span>
                 </li>
