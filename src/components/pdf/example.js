@@ -3,9 +3,10 @@ import { ReactReader, EpubView } from 'react-reader';
 import { Container } from 'react-bootstrap';
 import useLocalStorageState from 'use-local-storage-state';
 import { Contents, Rendition } from 'epubjs';
-// import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
+import Selections from '../writing/Selections.jsx'
 
 import { DEMO_URL } from '../config';
+import Modal from '../writing/Modal.jsx';
 
 
 const TestPage = ({ doc, title }) => {
@@ -16,47 +17,58 @@ const TestPage = ({ doc, title }) => {
   const [largeText, setLargeText] = useState(false);
   const [rend, setRend] = useState(null)
   const [selections, setSelections] = useLocalStorageState('selections', []);
-  // const [selections, setSelections] = useState([]);
-  // const [storedSelections, setStoredSelections] = useState([])
-  const storedSelections = JSON.parse(localStorage.getItem('selections')) || [];
-  const [size, setSize] = useState(100)
+  const [highlights, setHighlights] = useState(null);
 
-  const addSelection = (newSelection) => {
-    console.log('newSelection', newSelection)
-    const updatedSelections = [...selections, newSelection];
-    setSelections(updatedSelections);
-    localStorage.setItem('selections', JSON.stringify(updatedSelections))
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleFontSize = () => {
+    setLargeText(!largeText);
   }
+  const toggleModal = () => {
+    console.log('toggle clicked')
+    setModalOpen(!modalOpen);
+  };
+
+
+  function setRenderSelection(cfiRange, contents) {
+    if (rend) {
+        setSelections((list) =>
+          list.concat({
+            text: rend.getRange(cfiRange).toString(),
+            cfiRange,
+          })
+        )
+        console.log('selections', selections)
+      rend.annotations.add(
+        'highlight',
+        cfiRange,
+        {},
+        undefined,
+        'hl',
+        { fill: 'grey', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
+        )
+        const selection = contents.window.getSelection()
+        console.log(selection)
+      selection?.removeAllRanges()
+    }
+  }
+
   useEffect(() => {
     console.log('selections', selections)
     localStorage.setItem('selections', JSON.stringify(selections))
   }, [selections])
 
+  //can't get highlights to repopulate on load
+  // useEffect(() => {
+  //   console.log(selections)
+  //   selections?.map(({cfiRange}) => {
+  //     rend?.annotations.add(cfiRange)
+  //   })
+  //   console.log('rend', rend?.annotations._annotations)
+  // }, [rend])
+
   useEffect(() => {
     if (rend) {
-      console.log('rendition', rendition)
-      function setRenderSelection(cfiRange, contents) {
-        if (rend) {
-            setSelections((list) =>
-              list.concat({
-                text: rend.getRange(cfiRange).toString(),
-                cfiRange,
-              })
-            )
-            console.log('selections', selections)
-          rend.annotations.add(
-            'highlight',
-            cfiRange,
-            {},
-            undefined,
-            'hl',
-            { fill: 'grey', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
-            )
-            const selection = contents.window.getSelection()
-            console.log(selection)
-          selection?.removeAllRanges()
-        }
-      }
       rend.on('selected', setRenderSelection)
       return () => {
         rend?.off('selected', setRenderSelection)
@@ -65,35 +77,26 @@ const TestPage = ({ doc, title }) => {
   }, [setSelections, rend])
 
   useEffect(() => {
-    if (rendition.current) {
+    if (rend) {
       console.log(rendition.current);
-      rendition.current.themes.fontSize(largeText ? '140%' : '100%');
+      rend.themes.fontSize(largeText ? '140%' : '100%');
     }
   }, [largeText]);
 
   useEffect(() => {
-    if (rendition.current) {
-      rendition.current.themes.fontSize(largeText ? '140%' : '100%');
+    if (rend) {
+      rend.themes.fontSize(largeText ? '140%' : '100%');
     }
-  }, [rendition, largeText]);
+  }, [rend, largeText]);
 
   return (
     <div className="container">
       <div className="row gap-4">
         <div className="col-12 d-flex justify-content-between align-items-center gap-2">
-          <div className="col-md-10 border border-secondary bg-white min-height-100 p-2 rounded">
-            <h4>Selections</h4>
-            <ul class="list-unstyled border-top border-stone-400">
-            {selections?.map(({ text, cfiRange }, i) => (
-              <li key={i} className="p-2">
-                <span>{text}</span>
-                </li>
-            ))}
-            </ul>
-          </div>
-          <button onClick={() => setLargeText(!largeText)} className="btn btn-light">
-            {largeText ? 'Smaller font' : 'Bigger font'}
-          </button>
+
+        <div className="dots" onClick={toggleModal}>. . .</div>
+       <Modal modalOpen={modalOpen} toggleModal={toggleModal} largeText={largeText} handleFontSize={handleFontSize}/>
+
         </div>
 
         <div className="col-md-12 aspect-ratio aspect-ratio-3x4 overflow-hidden d-flex justify-content-center align-items-center">
@@ -106,9 +109,6 @@ const TestPage = ({ doc, title }) => {
               locationChanged={(loc) => setLocation(loc)}
               getRendition={(r) => {
                 setRend(r)
-                console.log('rendition', r)
-
-                rendition.current = r
                 r.hooks.content.register((contents) => {
                   const body = contents.window.document.querySelector('body')
                   if (body) {
