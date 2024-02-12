@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const Modal = ({ modalOpen, toggleModal, largeText, handleFontSize }) => {
+const Modal = ({ modalOpen, toggleModal, largeText, setLargeText }) => {
 
   const handleFont = () => {
-    handleFontSize()
+    setLargeText(!largeText)
   }
 
   return (
@@ -22,7 +22,7 @@ const Modal = ({ modalOpen, toggleModal, largeText, handleFontSize }) => {
                 </button>
               </div>
               <div className="modal-body">
-                <button onClick={() => handleFontSize()} className="btn btn-light btn-sm py-3 px-1">
+                <button onClick={() => handleFont()} className="btn btn-light btn-sm py-3 px-1">
                   {largeText ? 'Smaller font' : 'Bigger font'}
                 </button>
               </div>
