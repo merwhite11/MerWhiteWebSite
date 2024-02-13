@@ -95,7 +95,15 @@ const TestPage = ({ doc, title }) => {
         <div className="col-12 d-flex justify-content-between align-items-center gap-2">
 
         <div className="dots" onClick={toggleModal}>. . .</div>
-       <Modal modalOpen={modalOpen} toggleModal={toggleModal} largeText={largeText} setLargeText={setLargeText}/>
+        {/* <Selections rend={rend} selections={selections} setSelections={setSelections}/> */}
+       <Modal
+       modalOpen={modalOpen}
+       toggleModal={toggleModal}
+       largeText={largeText}
+       setLargeText={setLargeText}
+       rend={rend}
+       selections={selections}
+       setSelections={setSelections}/>
 
         </div>
 
