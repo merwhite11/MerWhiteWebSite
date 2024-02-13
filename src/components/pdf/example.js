@@ -9,7 +9,7 @@ import { DEMO_URL } from '../config';
 import Modal from '../writing/Modal.jsx';
 
 
-const TestPage = ({ doc, title }) => {
+const Reader = ({ doc, title }) => {
 
   const epubUrl = process.env.PUBLIC_URL + `${doc}`;
   const [location, setLocation] = useLocalStorageState('book-loc', 0);
@@ -117,6 +117,7 @@ const TestPage = ({ doc, title }) => {
               locationChanged={(loc) => setLocation(loc)}
               getRendition={(r) => {
                 setRend(r)
+                console.log(rend)
                 r.hooks.content.register((contents) => {
                   const body = contents.window.document.querySelector('body')
                   if (body) {
@@ -136,4 +137,4 @@ const TestPage = ({ doc, title }) => {
   )
 }
 
-export default TestPage;
+export default Reader;

@@ -13,7 +13,7 @@ const Modal = ({ modalOpen, toggleModal, largeText, setLargeText, rend, selectio
       {modalOpen && (
 
 
-        <div className="modal" tabindex="-1" role="dialog" style={{ display: 'block' }}>
+        <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -23,10 +23,10 @@ const Modal = ({ modalOpen, toggleModal, largeText, setLargeText, rend, selectio
                 </button>
               </div>
               <div className="modal-body">
-              <Selections rend={rend} selections={selections} setSelections={setSelections}/>
-                <button onClick={() => handleFont()} className="btn btn-light btn-sm py-3 px-1">
+                <button onClick={() => handleFont()} className="btn btn-light btn-sm py-3 px-1 mb-3">
                   {largeText ? 'Smaller font' : 'Bigger font'}
                 </button>
+              <Selections rend={rend} selections={selections} setSelections={setSelections}/>
               </div>
             </div>
           </div>
