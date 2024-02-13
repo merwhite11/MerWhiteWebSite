@@ -3,23 +3,23 @@ import { ReactReader, EpubView } from 'react-reader';
 import { Container } from 'react-bootstrap';
 import useLocalStorageState from 'use-local-storage-state';
 import { Contents, Rendition } from 'epubjs';
-import Selections from '../writing/Selections.jsx'
+// import Selections from '../writing/Selections.jsx'
 
-import { DEMO_URL } from '../config';
-import Modal from '../writing/Modal.jsx';
+// import { DEMO_URL } from '../config';
+// import Modal from '../writing/Modal.jsx';
 
 
-const TestPage = ({ doc, title }) => {
+const Reader = ({ doc, title }) => {
 
   const epubUrl = process.env.PUBLIC_URL + `${doc}`;
-  const [location, setLocation] = useLocalStorageState('book-loc', 0);
+  // const [location, setLocation] = useLocalStorageState('book-loc', 0);
   const rendition = useRef(null)
-  const [largeText, setLargeText] = useState(false);
+  // const [largeText, setLargeText] = useState(false);
   const [rend, setRend] = useState(null)
-  const [selections, setSelections] = useLocalStorageState('selections', []);
-  const [highlights, setHighlights] = useState(null);
+  // const [selections, setSelections] = useLocalStorageState('selections', []);
+  // const [highlights, setHighlights] = useState(null);
 
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
 
   const handleFontSize = () => {
     setLargeText(!largeText);
@@ -32,13 +32,13 @@ const TestPage = ({ doc, title }) => {
 
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
-        setSelections((list) =>
-          list.concat({
-            text: rend.getRange(cfiRange).toString(),
-            cfiRange,
-          })
-        )
-        console.log('selections', selections)
+      setSelections((list) =>
+        list.concat({
+          text: rend.getRange(cfiRange).toString(),
+          cfiRange,
+        })
+      )
+      console.log('selections', selections)
       rend.annotations.add(
         'highlight',
         cfiRange,
@@ -46,17 +46,17 @@ const TestPage = ({ doc, title }) => {
         undefined,
         'hl',
         { fill: 'grey', 'fill-opacity': '0.5', 'mix-blend-mode': 'multiply' }
-        )
-        const selection = contents.window.getSelection()
-        console.log(selection)
+      )
+      const selection = contents.window.getSelection()
+      console.log(selection)
       selection?.removeAllRanges()
     }
   }
 
-  useEffect(() => {
-    console.log('selections', selections)
-    localStorage.setItem('selections', JSON.stringify(selections))
-  }, [selections])
+  // useEffect(() => {
+  //   console.log('selections', selections)
+  //   localStorage.setItem('selections', JSON.stringify(selections))
+  // }, [selections])
 
   //can't get highlights to repopulate on load
   // useEffect(() => {
@@ -66,44 +66,44 @@ const TestPage = ({ doc, title }) => {
   //   })
   //   console.log('rend', rend?.annotations._annotations)
   // }, [rend])
-
-  useEffect(() => {
-    if (rend) {
-      rend.on('selected', setRenderSelection)
-      return () => {
-        rend?.off('selected', setRenderSelection)
+  /*
+    useEffect(() => {
+      if (rend) {
+        rend.on('selected', setRenderSelection)
+        return () => {
+          rend?.off('selected', setRenderSelection)
+        }
       }
-    }
-  }, [setSelections, rend])
+    }, [setSelections, rend])
 
-  useEffect(() => {
-    if (rend) {
-      console.log(rendition.current);
-      rend.themes.fontSize(largeText ? '140%' : '100%');
-    }
-  }, [largeText]);
+    useEffect(() => {
+      if (rend) {
+        console.log(rendition.current);
+        rend.themes.fontSize(largeText ? '140%' : '100%');
+      }
+    }, [largeText]);
 
-  useEffect(() => {
-    if (rend) {
-      rend.themes.fontSize(largeText ? '140%' : '100%');
-    }
-  }, [rend, largeText]);
-
+    useEffect(() => {
+      if (rend) {
+        rend.themes.fontSize(largeText ? '140%' : '100%');
+      }
+    }, [rend, largeText]);
+  */
   return (
     <div className="container">
       <div className="row gap-4">
         <div className="col-12 d-flex justify-content-between align-items-center gap-2">
 
-        <div className="dots" onClick={toggleModal}>. . .</div>
-        {/* <Selections rend={rend} selections={selections} setSelections={setSelections}/> */}
-       <Modal
-       modalOpen={modalOpen}
-       toggleModal={toggleModal}
-       largeText={largeText}
-       setLargeText={setLargeText}
-       rend={rend}
-       selections={selections}
-       setSelections={setSelections}/>
+          <div className="dots" onClick={toggleModal}>. . .</div>
+          {/* <Selections rend={rend} selections={selections} setSelections={setSelections}/> */}
+          {/* <Modal
+            modalOpen={modalOpen}
+            toggleModal={toggleModal}
+            largeText={largeText}
+            setLargeText={setLargeText}
+            rend={rend}
+            selections={selections}
+            setSelections={setSelections} /> */}
 
         </div>
 
@@ -114,7 +114,7 @@ const TestPage = ({ doc, title }) => {
               title={title}
               url={epubUrl}
               location={location}
-              locationChanged={(loc) => setLocation(loc)}
+              // locationChanged={(loc) => setLocation(loc)}
               getRendition={(r) => {
                 setRend(r)
                 r.hooks.content.register((contents) => {
@@ -125,7 +125,7 @@ const TestPage = ({ doc, title }) => {
                     }
                   }
                 })
-                r.themes.fontSize(largeText ? '140%' : '100%')
+                // r.themes.fontSize(largeText ? '140%' : '100%')
               }}
             />
           </div>
@@ -136,4 +136,4 @@ const TestPage = ({ doc, title }) => {
   )
 }
 
-export default TestPage;
+export default Reader;
