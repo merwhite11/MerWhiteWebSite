@@ -22,12 +22,16 @@ const Selections = ({ rend, selections, setSelections }) => {
 
       <div>
         <Button
+          className='btn btn-secondary dropdown-toggle' data-bs-toggle="dropdown" aria-expanded='false'
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
           {open ? 'Close Highlights' : 'See Highlights'}
         </Button>
+        {/* <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button> */}
         <Collapse in={open}>
           <div>
             <ul className="list-unstyled border-top border-stone-400">
