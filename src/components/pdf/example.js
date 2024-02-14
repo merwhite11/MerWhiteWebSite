@@ -12,9 +12,9 @@ import { Contents, Rendition } from 'epubjs';
 const Reader = ({ doc, title }) => {
 
   const epubUrl = process.env.PUBLIC_URL + `${doc}`;
-  // const [location, setLocation] = useLocalStorageState('book-loc', 0);
+  const [location, setLocation] = useLocalStorageState('book-loc', 0);
   const rendition = useRef(null)
-  // const [largeText, setLargeText] = useState(false);
+  const [largeText, setLargeText] = useState(false);
   const [rend, setRend] = useState(null)
   // const [selections, setSelections] = useLocalStorageState('selections', []);
   // const [highlights, setHighlights] = useState(null);
@@ -85,16 +85,22 @@ const Reader = ({ doc, title }) => {
 
     useEffect(() => {
       if (rend) {
+       console.log('rend', rend)
         rend.themes.fontSize(largeText ? '140%' : '100%');
       }
     }, [rend, largeText]);
-  */
+    */
+    useEffect(() => {
+      if (rend) {
+       console.log('rend', rend)
+      }
+    }, [rend]);
   return (
-    <div className="container">
-      <div className="row gap-4">
-        <div className="col-12 d-flex justify-content-between align-items-center gap-2">
+    // <div className="container">
+    //   <div className="row gap-4">
+        {/* <div className="col-12 d-flex justify-content-between align-items-center gap-2"> */}
 
-          <div className="dots" onClick={toggleModal}>. . .</div>
+          {/* <div className="dots" onClick={toggleModal}>. . .</div> */}
           {/* <Selections rend={rend} selections={selections} setSelections={setSelections}/> */}
           {/* <Modal
             modalOpen={modalOpen}
@@ -105,7 +111,7 @@ const Reader = ({ doc, title }) => {
             selections={selections}
             setSelections={setSelections} /> */}
 
-        </div>
+        {/* </div> */}
 
         <div className="col-md-12 aspect-ratio aspect-ratio-3x4 overflow-hidden d-flex justify-content-center align-items-center">
           <div className="reader-container">
@@ -114,9 +120,9 @@ const Reader = ({ doc, title }) => {
               title={title}
               url={epubUrl}
               location={location}
-              // locationChanged={(loc) => setLocation(loc)}
+              locationChanged={(loc) => setLocation(loc)}
               getRendition={(r) => {
-                setRend(r)
+                // rendition.current = r
                 r.hooks.content.register((contents) => {
                   const body = contents.window.document.querySelector('body')
                   if (body) {
@@ -125,13 +131,13 @@ const Reader = ({ doc, title }) => {
                     }
                   }
                 })
-                // r.themes.fontSize(largeText ? '140%' : '100%')
+                r.themes.fontSize(largeText ? '140%' : '100%')
               }}
             />
           </div>
         </div>
-      </div>
-    </div>
+    //   </div>
+    // </div>
 
   )
 }
