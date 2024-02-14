@@ -30,7 +30,7 @@ const Selections = ({ rend, selections, setSelections }) => {
         </Button>
         <Collapse in={open}>
           <div>
-            <ul class="list-unstyled border-top border-stone-400">
+            <ul className="list-unstyled border-top border-stone-400">
               {selections?.map(({ text, cfiRange }, i) => (
                 <li key={i} className="p-2">
                   <span>{text}</span>

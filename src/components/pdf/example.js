@@ -90,11 +90,7 @@ const Reader = ({ doc, title }) => {
       }
     }, [rend, largeText]);
     */
-    useEffect(() => {
-      if (rend) {
-       console.log('rend', rend)
-      }
-    }, [rend]);
+
   return (
     // <div className="container">
     //   <div className="row gap-4">
