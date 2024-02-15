@@ -151,8 +151,6 @@
 
 /* WRITING HOME */
 .bookshelf-container{
-    display: grid;
-    grid-template-rows: 1fr 5fr;
     margin-left: 10vw;
     margin-right: 10vh;
     /* margin-top: 2vh; */
