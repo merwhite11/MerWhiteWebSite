@@ -5,7 +5,7 @@ import ArrowDownRight from './ArrowDownRight.jsx';
 import WritingContainer from './writing/WritingContainer.jsx';
 import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
-
+import Background from '../Images/background.jpg'
 import ReactPDF from '@react-pdf/renderer';
 import { pdfjs } from 'react-pdf';
 
@@ -24,7 +24,10 @@ const Home = (props) => {
       </div>
       <div className="components-container">
         <div className="arrows-container">
+
           <ArrowDownLeft></ArrowDownLeft>
+
+
           <ArrowDownRight></ArrowDownRight>
         </div>
         <WritingContainer></WritingContainer>

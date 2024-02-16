@@ -11,13 +11,16 @@
 /*HOME PAGE */
 /*HEADER */
 .outer-container{
-    display: grid;
-    grid-template-rows: auto 1fr;
-    /* display: flex;
-    flex-direction: column; */
+    /* display: grid;
+    grid-template-rows: auto 1fr; */
+    display: flex;
     /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
+    background-image: url('./Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
     /* font-family: HappinessMood; */
@@ -36,13 +39,18 @@
     grid-row-start: 1;
 }
 .header{
-    display: grid;
+    /* display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 2fr 1fr;
     /* border: 3px solid olivedrab; */
-    font-family: HappinessMood;
+    /* font-family: HappinessMood;
     font-size: x-large;
-    font-stretch: expanded;
+    font-stretch: expanded; */
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .left-header{
@@ -99,30 +107,33 @@
 }
 
 .arrows-container{
-    display: grid;
+    /* display: grid;
     grid-row-start: 1;
+    grid-template-columns: 1fr 1fr; */
     grid-column-start: 2;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
 }
 .arrow-down-left{
-    grid-column-start: 1;
-    justify-self: end;
+    /* grid-column-start: 1; */
+    float: left;
 }
 .arrow-down-right{
-    grid-column-start: 2;
-    justify-self: end;
+    /* grid-column-start: 2; */
+    float: right;
 }
 .writing-container{
     grid-row-start: 2;
     grid-column-start: 2;
     justify-self: start;
-    margin-left: -6vw;
+    padding-top: 3vh;
+    margin-left: -3vw;
 }
 .dance-container{
     grid-row-start: 2;
     grid-column-start: 2;
     justify-self: end;
-    margin-right: -6vw;
+    padding-top: 3vh;
 }
 
 /*DANCE HOME */

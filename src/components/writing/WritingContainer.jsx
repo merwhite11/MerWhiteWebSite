@@ -10,7 +10,7 @@ const WritingContainer = (props) => {
     const navigate = useNavigate();
     const handleClick = () => navigate('/writing')
     return (
-        <div className="writing-container">
+        <div className="writing-container float-left">
             <div className="card text-center">
                 <div className="card-body">
                     <h2 className="card-title">WRITING</h2>
