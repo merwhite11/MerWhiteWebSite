@@ -6,7 +6,7 @@ const Header = () => {
   const navigate = useNavigate();
   const handleClick = (path) => navigate(`/${path}`)
   return (
-    <div className='col-md-12' >
+    <div className='header' >
         <img src={Banner} className="w-100"/>
       </div>
   )

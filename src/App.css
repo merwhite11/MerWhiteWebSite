@@ -14,6 +14,7 @@
     /* display: grid;
     grid-template-rows: auto 1fr; */
     display: flex;
+    /* flex-direction: column; */
     /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
@@ -21,6 +22,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    justify-content: center;
     /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
     /* font-family: HappinessMood; */
@@ -36,9 +38,24 @@
     font-stretch: expanded;
 }
 .header-container{
-    grid-row-start: 1;
+    width: 100vw;
+    height: 30vh;
+    /* display: flex; */
+    justify-content: center;
+    /* position: relative; */
+
+    /* justify-items: center; */
 }
 .header{
+    /* background-image: url('./Images/logo-HoverDiamond.jpg');
+    background-size: cover;
+    background-position: center; */
+    position: absolute;
+    /* width: 100%;
+    height: 100%;
+    left: 10;
+    top: 10;
+    padding: 3vh; */
     /* display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 2fr 1fr;
@@ -46,11 +63,8 @@
     /* font-family: HappinessMood;
     font-size: x-large;
     font-stretch: expanded; */
-    width: 100%;
-    height: 30vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    /* z-index: 0;
+    height: 30vh; */
 }
 
 .left-header{

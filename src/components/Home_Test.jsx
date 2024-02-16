@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './header/Header.jsx';
-import ArrowDownLeft from './ArrowDownLeft.jsx';
-import ArrowDownRight from './ArrowDownRight.jsx';
+// import ArrowDownLeft from './ArrowDownLeft.jsx';
+// import ArrowDownRight from './ArrowDownRight.jsx';
 import WritingContainer from './writing/WritingContainer.jsx';
 import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
@@ -22,10 +22,10 @@ const Home_Test = (props) => {
       <Header></Header>
       <div className="components-container">
 
-        <div className="arrows-container">
+        {/* <div className="arrows-container">
           <ArrowDownLeft></ArrowDownLeft>
           <ArrowDownRight></ArrowDownRight>
-        </div>
+        </div> */}
         <WritingContainer></WritingContainer>
         <DanceContainer></DanceContainer>
       </div>
