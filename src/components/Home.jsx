@@ -21,16 +21,16 @@ const Home = (props) => {
   return (
     <div className="outer-container">
       <div className="header-container">
-        <div className="header">
-        <img src={Banner} className='img-fluid' alt='Responsive image'></img>
-        </div>
+        {/* <div className="header"> */}
+        <img src={Banner} className='header' alt='Responsive image'></img>
+        {/* </div> */}
       </div>
-      <div className="components-container">
+      {/* <div className="components-container">
 
         <WritingContainer></WritingContainer>
         <DanceContainer></DanceContainer>
         {/* <SinglePage /> */}
-      </div>
+      {/* </div>  */}
     </div>
   );
 }

@@ -14,7 +14,7 @@
     /* display: grid;
     grid-template-rows: auto 1fr; */
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
@@ -22,7 +22,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    justify-content: center;
+    /* justify-content: center; */
     /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
     /* font-family: HappinessMood; */
@@ -41,67 +41,85 @@
     width: 100vw;
     height: 30vh;
     /* display: flex; */
-    justify-content: center;
+    /* justify-content: center; */
+    align-items: center;
     /* position: relative; */
 
     /* justify-items: center; */
 }
 .header{
-    /* background-image: url('./Images/logo-HoverDiamond.jpg');
-    background-size: cover;
-    background-position: center; */
-    position: absolute;
-    /* width: 100%;
-    height: 100%;
-    left: 10;
-    top: 10;
-    padding: 3vh; */
+    width: 100vw;
+    height: 30vh;
+    margin: 0 auto;
+    /* position: fixed; */
+    /* position: absolute; */
+    object-fit: contain;
+    /* left: 0;
+    top: 0; */
+    padding: 3vh;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
     /* display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr; */
     /* border: 3px solid olivedrab; */
     /* font-family: HappinessMood;
     font-size: x-large;
-    font-stretch: expanded; */
+    font-stretch: expanded;
     /* z-index: 0;
     height: 30vh; */
 }
 
 .left-header{
-    grid-row-start: 1;
+    /* grid-row-start: 1; */
     display: flex;
-    margin-top: 20vh;
-    gap: 2vw
+    /* overflow: hidden; */
+    /* align-items: center; */
 }
 
 .left-header-image{
-    width: 100%;
-    margin-left: 5vw
+    max-width: 100%;
+    height: auto;
+    /* transform: translate(-50%, -50%);
+    position: relative;
+    left: 50%;
+    top: 50%; */
+    margin-left: 5vw;
+    /* justify-self: center; */
+    object-fit: contain;
 }
 
 .title{
     grid-column-start: 2;
     justify-self: center;
+    align-items: center;
 }
 
 .title-image{
-    justify-self: center;
+    /* justify-self: center;
+    align-self: center; */
     padding: 2vh;
+    height: 100%;
     width: 70%;
     margin-left: 9vw;
-    /* font-size: xx-large */
+    object-fit: contain;
+    margin-top: 10vh;
 }
 
 .whos-she{
     grid-column-start: 3;
-    grid-row-start: 1;
-    align-self: start;
-    margin-top: 15vh;
+    /* grid-row-start: 1; */
+    /* align-self: start;
+    justify-self: center ; */
+    /* margin-top: 9vh; */
     padding-right: 5vw;
+    align-items: center;
 }
 
 .whos-she-image{
     width: 100%;
+    object-fit: contain;
 }
 
 .sub-title{
@@ -114,10 +132,13 @@
 
 .components-container{
     /* margin-top: -40vh; */
-    margin-left: 5vw;
+    /* margin-left: 5vw; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 35% 65%
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
 }
 
 .arrows-container{
@@ -137,17 +158,23 @@
     float: right;
 }
 .writing-container{
-    grid-row-start: 2;
+    /* grid-row-start: 1; */
     grid-column-start: 2;
-    justify-self: start;
-    padding-top: 3vh;
-    margin-left: -3vw;
+    padding-top: 15vh;
+    margin-right: 5vw;
+    /* width: 25%;
+    height: auto; */
+    /* float: left; */
+    /* justify-self: center; */
+    /* padding-top: 3vh; */
+    /* margin-left: -3vw; */
 }
 .dance-container{
-    grid-row-start: 2;
-    grid-column-start: 2;
-    justify-self: end;
-    padding-top: 3vh;
+    /* grid-row-start: 2; */
+    grid-column-start: 3;
+    margin-left: 5vw;
+    /* justify-self: end; */
+    padding-top: 15vh;
 }
 
 /*DANCE HOME */
