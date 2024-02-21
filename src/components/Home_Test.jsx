@@ -8,6 +8,7 @@ import DanceContainer from './dance/DanceContainer.jsx';
 import SinglePage from './pdf/single-page.js';
 import WritingBlob from './WritingBlob.jsx';
 import DanceBlob from './DanceBlob.jsx';
+import Home_Body from './Home_Body.jsx'
 
 
 import ReactPDF from '@react-pdf/renderer';
@@ -25,8 +26,7 @@ const Home_Test = (props) => {
     <div className="outer-container">
       <Header_Test></Header_Test>
       <div className="components-container">
-        {/* <WritingBlob></WritingBlob>
-        <DanceBlob></DanceBlob> */}
+        <Home_Body></Home_Body>
       </div>
     </div>
   );

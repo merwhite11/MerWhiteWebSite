@@ -40,6 +40,17 @@
     max-height: 50%;
 
 }
+
+.button-box{
+    max-height: 80%;
+    height: 40vh;
+    margin-left: 6vw;
+    margin-top: 6vh
+}
+
+.button{
+    max-height: 100%
+}
 .subpage-header{
     margin-top: 3vh;
     align-self: center;
@@ -143,6 +154,7 @@
 
 .sub-title {
     font-size: 16px; /* Default font size */
+    padding-top: 4vh;
   }
 
   @media (min-width: 576px) {
@@ -167,6 +179,7 @@
   @media (min-width: 1200px) {
     .sub-title {
       font-size: 24px; /* Adjust font size for extra-large screens */
+      padding-top: 5vh;
     }
   }
 /* MAIN BODY */

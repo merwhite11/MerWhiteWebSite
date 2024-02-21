@@ -25,14 +25,14 @@ const Header_Test = () => {
         </div>
       </Col>
     </Row>
-    {/* <Row>
+    <Row>
       <Col className="d-flex justify-content-center">
         <div className="box">
 
       <p className="sub-title">A medium for my mediums</p>
         </div>
       </Col>
-    </Row> */}
+    </Row>
   </Container>
 
 
