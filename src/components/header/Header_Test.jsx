@@ -11,12 +11,12 @@ const Header_Test = () => {
     <Row className="header" className="d-flex align-items-center justify-content-center py-2 px-4">
       <Col sm={4} md={4} xs={4} >
         <div className="box">
-        <img className="img-fluid" src={Welcome} />
+        <img className="img-fluid header-image" src={Welcome} />
         </div>
       </Col>
       <Col sm={4} md={4} xs={4}>
         <div className="box">
-        <img className="img-fluid" src={Logo} />
+        <img className="img-fluid header-image" src={Logo} />
         </div>
       </Col>
       <Col sm={4} md={4} xs={4}>
@@ -25,6 +25,14 @@ const Header_Test = () => {
         </div>
       </Col>
     </Row>
+    {/* <Row>
+      <Col className="d-flex justify-content-center">
+        <div className="box">
+
+      <p className="sub-title">A medium for my mediums</p>
+        </div>
+      </Col>
+    </Row> */}
   </Container>
 
 
