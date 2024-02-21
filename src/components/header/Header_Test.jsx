@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import Welcome from '../../Images/welcome-to.png'
 import Logo from '../../Images/logo-nobg.png'
-import Whosshe from '../../Images/whos-she.png'
+import WhosShe from '../../Images/whos-she.png'
+import WhosSheHover from '../../Images/whos-she-yellow-fill-outline.png';
+
 
 const Header_Test = () => {
+  const navigate = useNavigate();
+  const handleClick = (path) => navigate(`/${path}`)
+
+  const [hovered, setHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+  // useEffect(() => {
+  //   setHovered(!hovered)
+  // }, [hovered])
+
+  const WhosSheSrc = hovered ? WhosSheHover : WhosShe;
 
   return (
     <Container fluid>
@@ -21,7 +42,13 @@ const Header_Test = () => {
       </Col>
       <Col sm={4} md={4} xs={4}>
         <div className="box">
-        <img className="img-fluid whos-she-image" src={Whosshe} />
+        <img
+        className="img-fluid whos-she-image"
+        src={WhosSheSrc}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={(e)=>handleClick('contact')}
+        />
         </div>
       </Col>
     </Row>
