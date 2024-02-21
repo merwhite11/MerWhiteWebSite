@@ -7,7 +7,7 @@ const Header = () => {
   const handleClick = (path) => navigate(`/${path}`)
   return (
     <div className='header' >
-        <img src={Banner} className="w-100"/>
+        <img src={Banner} className="img-fluid"/>
       </div>
   )
 }

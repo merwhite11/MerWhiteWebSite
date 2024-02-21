@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import DanceButton from '../Images/dancing-button.png'
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,9 +10,7 @@ const DanceBlob = (props) => {
     const handleClick = () => navigate('/writing')
     return (
         <div className="dance-container">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#FF0066" d="M47.1,-48.3C58.8,-35.4,64.4,-17.7,63.3,-1.1C62.2,15.5,54.4,31.1,42.7,44.5C31.1,57.9,15.5,69.2,0.7,68.4C-14.1,67.7,-28.2,55,-41.2,41.6C-54.3,28.2,-66.4,14.1,-65.5,0.9C-64.6,-12.2,-50.6,-24.4,-37.5,-37.3C-24.4,-50.1,-12.2,-63.6,2.7,-66.3C17.7,-69.1,35.4,-61.1,47.1,-48.3Z" transform="translate(100 100)" />
-            </svg>
+            <img src={DanceButton} className="dance-button"/>
         </div>
 
     )

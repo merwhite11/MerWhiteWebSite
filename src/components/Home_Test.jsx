@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header/Header.jsx';
-import Header_Old from './header/Header_Old.jsx'
+import Header_Test from './header/Header_Test.jsx'
 // import ArrowDownLeft from './ArrowDownLeft.jsx';
 // import ArrowDownRight from './ArrowDownRight.jsx';
 import WritingContainer from './writing/WritingContainer.jsx';
@@ -23,15 +23,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 const Home_Test = (props) => {
   return (
     <div className="outer-container">
-      <Header_Old></Header_Old>
+      <Header_Test></Header_Test>
       <div className="components-container">
-
-        {/* <div className="arrows-container">
-          <ArrowDownLeft></ArrowDownLeft>
-          <ArrowDownRight></ArrowDownRight>
-        </div> */}
-        <WritingBlob></WritingBlob>
-        <DanceBlob></DanceBlob>
+        {/* <WritingBlob></WritingBlob>
+        <DanceBlob></DanceBlob> */}
       </div>
     </div>
   );
