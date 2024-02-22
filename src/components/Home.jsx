@@ -19,7 +19,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const Home = (props) => {
   return (
-    <div className="outer-container">
+    <div className="outer-container container">
       <div className="header-container">
         {/* <div className="header"> */}
         <img src={Banner} className='header' alt='Responsive image'></img>
