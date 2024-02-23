@@ -3,6 +3,7 @@ import { ReactReader, EpubView } from 'react-reader';
 import { Button, Collapse } from 'react-bootstrap';
 import useLocalStorageState from 'use-local-storage-state';
 import { Contents, Rendition } from 'epubjs';
+import { BiCaretDown, BiCaretUp } from 'react-icons/bi'
 
 const Selections = ({ rend, selections, setSelections, title }) => {
 
@@ -24,18 +25,16 @@ const Selections = ({ rend, selections, setSelections, title }) => {
 
 
 
-      <div>
+      <div className="flex-grow-1">
         <Button
-          className='btn btn-secondary dropdown-toggle' data-bs-toggle="dropdown" aria-expanded='false'
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"
           aria-expanded={open}
+          className='btn btn-light w-100 text-start d-flex align-items-center justify-content-between'
         >
           {open ? 'Close Highlights' : 'See Highlights'}
+          {open ? <BiCaretUp style={{ marginLeft: 'auto' }} /> : <BiCaretDown style={{ marginLeft: 'auto' }} />}
         </Button>
-        {/* <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
-        </button> */}
         <Collapse in={open}>
           <div>
             <ul className="list-unstyled border-top border-stone-400">
@@ -46,7 +45,6 @@ const Selections = ({ rend, selections, setSelections, title }) => {
                     className="btn btn-light p2"
                     onClick={() => {
                       rend?.annotations.remove(cfiRange, 'highlight')
-                      // deleteSelection(selections[title].filter((item, j) => j !== i))
                       deleteSelection(title, i);
                     }}
                   >

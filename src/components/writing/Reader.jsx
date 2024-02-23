@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ReactReader } from 'react-reader';
+import { PiDotsThreeOutline, PiDotsThreeOutlineFill } from "react-icons/pi";
 import useLocalStorageState from 'use-local-storage-state';
 // import Selections from './Selections.jsx';
 import Modal from './Modal.jsx';
@@ -16,6 +17,7 @@ const Reader = ({ doc, title }) => {
   const [largeText, setLargeText] = useState(null);
   const [selections, setSelections] = useLocalStorageState('selections', []);
   const [modalOpen, setModalOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const toggleModal = () => {
     console.log('toggle clicked')
@@ -84,14 +86,26 @@ const Reader = ({ doc, title }) => {
     }
   }, [rend, largeText]);
 
+  const dots = isHovered ?
+    <PiDotsThreeOutlineFill
+    size={30}
+    className="mt-2"
+    onMouseLeave={() => setIsHovered(false)}
+    onClick={toggleModal}
+  />
+  :
+  <PiDotsThreeOutline
+  size={30}
+  className="mt-2"
+  onMouseEnter={() => setIsHovered(true)}
+  onClick={toggleModal}
+/>
   return (
 
     <div className="container">
       <div className="row gap-4">
         <div className="col-12 d-flex justify-content-between align-items-center gap-2">
-
-          <div className="dots" onClick={toggleModal}>. . .</div>
-
+        {dots}
           <Modal
             modalOpen={modalOpen}
             toggleModal={toggleModal}

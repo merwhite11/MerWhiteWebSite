@@ -313,7 +313,7 @@
     grid-row-start: 2;
 }
 
-/* PDFS*/
+/* READER*/
 
 .reader-container{
     /* display: flex; */
@@ -335,42 +335,8 @@
     justify-self: center;
 }
 
-.font-size-btn{
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    left: 1rem;
-    text-align: center;
-    z-index: 1;
-}
-.single-pdf-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2vw;
-    background-color: #B9D9EB;
-}
-.double-pdf-div{
-    display: flex;
-    background-color: #B9D9EB;
-    grid-template-columns: 1fr 1fr;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 3vh;
-}
-.pages{
-    display: flex;
-    flex-direction: row;
-    gap: 3vh;
-}
-.page{
-    width: 50%;
-    float: left;
-    /* grid-column-start: 1;
-    border: 5px;
-    border-color: green; */
-}
+
+
 
 
 

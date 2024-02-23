@@ -13,27 +13,12 @@
     <text>Meredith White</text>
   </docAuthor>
   <navMap>
-    <navPoint id="navpoint-1" playOrder="1">
+    <navPoint id="navpoint-1" playOrder="9">
       <navLabel>
-        <text>The Grapevine Diaries</text>
+        <text>Cover</text>
       </navLabel>
-      <content src="./Text/Contents.xhtml#pgepubid00000"/>
+      <content src="./Text/Cover.xhtml#pgepubid00001"/>
     </navPoint>
-
-    <navPoint id="navpoint-2" playOrder="9">
-      <navLabel>
-        <text>Published January 18, 2022</text>
-      </navLabel>
-      <content src="./Text/Contents.xhtml#pgepubid00001"/>
-    </navPoint>
-
-    <navPoint id="navpoint-2" playOrder="10">
-      <navLabel>
-        <text>Contents</text>
-      </navLabel>
-      <content src="./Text/Contents.xhtml#pgepubid00002"/>
-    </navPoint>
-
     <navPoint id="navpoint-3" playOrder="11">
       <navLabel>
         <text>Glossary</text>
@@ -80,7 +65,13 @@
       <navLabel>
         <text>Epilogue</text>
       </navLabel>
-      <content src="./Text/Epilogue.xhtml#pgepubid00008"/>
+      <content src="./Text/Epilogue.xhtml#pgepubid00009"/>
+    </navPoint>
+         <navPoint id="navpoint-9" playOrder="17">
+      <navLabel>
+        <text>Author's Note</text>
+      </navLabel>
+      <content src="./Text/AuthorsNote.xhtml#pgepubid00010"/>
     </navPoint>
   </navMap>
 </ncx>
