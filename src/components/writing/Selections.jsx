@@ -4,7 +4,7 @@ import { Button, Collapse } from 'react-bootstrap';
 import useLocalStorageState from 'use-local-storage-state';
 import { Contents, Rendition } from 'epubjs';
 
-const Selections = ({ rend, selections, setSelections }) => {
+const Selections = ({ rend, selections, setSelections, title }) => {
 
   const [open, setOpen] = useState(false);
 

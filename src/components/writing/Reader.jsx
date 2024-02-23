@@ -12,18 +12,22 @@ const Reader = ({ doc, title }) => {
   const [rend, setRend] = useState(null)
   // const [firstRenderDone, setFirstRenderDone] = useState(false)
   // const [location, setLocation] = useState(null);
-  const [location, setLocation] = useLocalStorageState('book-progress', 0);
+  const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
   const [largeText, setLargeText] = useState(null);
   const [selections, setSelections] = useLocalStorageState('selections', []);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleFontSize = () => {
-    setLargeText(!largeText);
-  }
-
   const toggleModal = () => {
     console.log('toggle clicked')
     setModalOpen(!modalOpen);
+  };
+
+  const handleLocationChanged = (loc) => {
+    console.log(bookProgress)
+    setBookProgress({
+      ...bookProgress,
+      [title]: loc
+    });
   };
 
   function setRenderSelection(cfiRange, contents) {
@@ -55,6 +59,7 @@ const Reader = ({ doc, title }) => {
   }, [selections])
 
   useEffect(() => {
+    console.log('rend', rend)
     if (rend) {
       rend.on('selected', setRenderSelection)
       return () => {
@@ -84,7 +89,8 @@ const Reader = ({ doc, title }) => {
             setLargeText={setLargeText}
             rend={rend}
             selections={selections}
-            setSelections={setSelections} />
+            setSelections={setSelections}
+          />
 
         </div>
 
@@ -93,8 +99,8 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              location={location}
-              locationChanged={(loc) => { setLocation(loc) }}
+              location={bookProgress[title] || 0}
+              locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
                 console.log('location', location)
                 renditionRef.current = rendition;

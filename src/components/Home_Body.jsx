@@ -17,7 +17,7 @@ const Home_Body = () => {
   const [danceClick, setDanceClick] = useState(false);
 
   const handleClick = (path) => {
-    button === 'writing' ? setWritingClick(true) : setDanceClick(true)
+    path === 'writing' ? setWritingClick(true) : setDanceClick(true)
     navigate(`/${path}`)
   }
 
