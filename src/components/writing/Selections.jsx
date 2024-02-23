@@ -8,9 +8,13 @@ const Selections = ({ rend, selections, setSelections, title }) => {
 
   const [open, setOpen] = useState(false);
 
-  const deleteSelection = (selected) => {
-    setSelections(selected);
-  }
+  const deleteSelection = (title, index) => {
+    setSelections((prevSelections) => {
+      const updatedSelections = { ...prevSelections };
+      updatedSelections[title] = prevSelections[title].filter((item, j) => j !== index);
+      return updatedSelections;
+    });
+  };
 
   return (
 
@@ -35,14 +39,15 @@ const Selections = ({ rend, selections, setSelections, title }) => {
         <Collapse in={open}>
           <div>
             <ul className="list-unstyled border-top border-stone-400">
-              {selections?.map(({ text, cfiRange }, i) => (
+              {selections[title]?.map(({ text, cfiRange }, i) => (
                 <li key={i} className="p-2">
                   <span>{text}</span>
                   <button
                     className="btn btn-light p2"
                     onClick={() => {
                       rend?.annotations.remove(cfiRange, 'highlight')
-                      deleteSelection(selections.filter((item, j) => j !== i))
+                      // deleteSelection(selections[title].filter((item, j) => j !== i))
+                      deleteSelection(title, i);
                     }}
                   >
                     X

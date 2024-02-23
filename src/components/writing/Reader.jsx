@@ -32,12 +32,22 @@ const Reader = ({ doc, title }) => {
 
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
-      setSelections((list) =>
-        list.concat({
-          text: rend.getRange(cfiRange).toString(),
-          cfiRange,
-        })
-      )
+      setSelections((prevSelections) => ({
+        ...prevSelections,
+        [title]: [
+          ...(prevSelections[title] || []),
+          {
+            text: rend.getRange(cfiRange).toString(),
+            cfiRange,
+          },
+        ],
+      }));
+      // setSelections((list) =>
+      //   (list || []).concat({
+      //     text: rend.getRange(cfiRange).toString(),
+      //     cfiRange,
+      //   })
+      // )
       console.log('selections', selections)
       rend.annotations.add(
         'highlight',
@@ -90,6 +100,7 @@ const Reader = ({ doc, title }) => {
             rend={rend}
             selections={selections}
             setSelections={setSelections}
+            title = {title}
           />
 
         </div>

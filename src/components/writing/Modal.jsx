@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Selections from './Selections.jsx'
 
-const Modal = ({ modalOpen, toggleModal, largeText, setLargeText, rend, selections, setSelections }) => {
+const Modal = ({ modalOpen, toggleModal, largeText, setLargeText, rend, selections, setSelections, title }) => {
 
   const handleFont = () => {
     setLargeText(!largeText)
@@ -24,7 +24,7 @@ const Modal = ({ modalOpen, toggleModal, largeText, setLargeText, rend, selectio
 
               </div>
               <div className="modal-body">
-                <Selections rend={rend} selections={selections} setSelections={setSelections} />
+                <Selections rend={rend} selections={selections} setSelections={setSelections} title={title}/>
                 <button onClick={() => handleFont()} className="btn btn-light btn-sm py-3 px-1">
                   {largeText ? 'Smaller font' : 'Bigger font'}
                 </button>
