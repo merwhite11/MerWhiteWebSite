@@ -20,20 +20,22 @@ const Contact = () => {
   if (emailSent) thankYouNote = <div>Message sent! Thanks for writing 🤗</div>
 
   return (
-    <Container className="outer-container">
-      <h2 className="subpage-header">About Me</h2>
+    <div className="outer-container text-center">
+      <h1 className="display-4 mt-5">About Me</h1>
+
       <Row className="justify-content-center align-items-center">
-        <Col className="col-7 mt-4">
+        <Col className="col-7 mt-2 about-me-text">
           Hello ! Thanks for visiting my website. Before transitioning to a career in tech, I was working in vineyards which led to the creation of The Grapevine Diaries, which then led to the impetus for building this website. I love languages, studied Comparative Literature in college, and speak French and Spanish. So if you’re a word nerd like me, you can have some fun with the language toggle! My favorite language though, is dance and I’m always working on some DIY dance video which I perform, shoot and edit and then upload to YouTube.
         </Col>
+
       </Row>
-      <h4 className="subpage-header">Contact</h4>
+      <h4 className="display-5">Contact</h4>
       <Row className="justify-content-center">
         <Col className="col-6">
-          <Form className="d-flex flex-column" onSubmit={(e) => sendEmail(e)} ref={form}>
+          <Form className="d-flex flex-column text-start" onSubmit={(e) => sendEmail(e)} ref={form}>
 
             <Form.Group className="mb-3" controlId="formName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label className="text-start">Name</Form.Label>
               <Form.Control type="name" name="user_name" placeholder="Your name" />
             </Form.Group>
 
@@ -58,7 +60,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

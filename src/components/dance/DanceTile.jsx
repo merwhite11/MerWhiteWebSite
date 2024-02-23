@@ -1,10 +1,10 @@
 import React from 'react';
 import YouTube from "react-youtube";
 
-function DanceTile({videoId}) {
+function DanceTile({ videoId }) {
     const options = {
-        height: '315',
-        width: '560',
+        // height: '100',
+        // width: 'auto',
         playerVars: {
             autoplay: 1,
             controls: 1
@@ -13,14 +13,22 @@ function DanceTile({videoId}) {
     // const _onReady = (event) => {
     //     event.target.pauseVideo();
     // }
-  return (
+    return (
         <div className="dance-tile">
             <div className="dance-card">
-                <YouTube className = "card-text" videoId={videoId} options={options} id="video"/>
+                <iframe
+                    width="450"
+                    height="300"
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
             </div>
-         </div>
+        </div>
 
-)
+    )
 }
 
 export default DanceTile;

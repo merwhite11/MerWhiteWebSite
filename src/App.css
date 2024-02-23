@@ -8,8 +8,11 @@
     src: local('HappinessMood'), url('./assets/HappinessMood.ttf')
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
+
 /*HOME PAGE */
 /*HEADER */
+
 .outer-container{
     display: grid;
     grid-template-rows: auto 1fr;
@@ -25,7 +28,8 @@
     /* justify-content: center; */
     /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
-    /* font-family: HappinessMood; */
+    font-family: Dosis;
+    font-weight: 800;
     /* margin-left: 10vw;
     margin-right: 10vh; */
 }
@@ -52,12 +56,11 @@
     max-height: 100%
 }
 .subpage-header{
-    margin-top: 3vh;
     align-self: center;
     justify-self: center;
-    font-family: HappinessMood;
-    font-size: x-large;
-    font-stretch: expanded;
+    font-family: Dosis;
+    font-weight: 900;
+
 }
 .header-container{
     width: 100vw;
@@ -239,12 +242,16 @@
 /*DANCE HOME */
 
 .dance-floor-container{
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1fr 4fr;
-    background-color: aliceblue;
+    background-color: aliceblue; */
+    display: flex;
+    flex-direction: row;
 }
 .dance-list{
     justify-self: center;
+    display: flex;
+    flex-direction: row;
 }
 .dance-card {
     /* display: flex;
@@ -262,17 +269,19 @@
 
 /* WRITING HOME */
 .bookshelf-container{
-    margin-left: 10vw;
-    margin-right: 10vh;
+    /* margin-left: 10vw;
+    margin-right: 10vh; */
     /* margin-top: 2vh; */
+    background-image: url('./Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .booklist{
     display: flex;
-    /* display: grid;
-    grid-template-rows: 1fr 1fr; */
-    /* gap: 5vh; */
-    margin-left: 10vw;
-    margin-right: 10vw;
+    flex-direction: column;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 .book-tile{
     /* display: flex;
@@ -335,6 +344,11 @@
     justify-self: center;
 }
 
+/*------------------ ABOUT ME STYLES -------------------*/
+
+.about-me-text {
+    font-weight: 500
+}
 
 
 

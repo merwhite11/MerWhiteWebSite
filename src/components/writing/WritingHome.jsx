@@ -16,8 +16,11 @@ const WritingHome = (props) => {
     }
     return (
         <div className="bookshelf-container">
-            <h2 className="col-md-12 text-center py-4">Book Shelf</h2>
-            <BookList className="booklist"/>
+            <h2 className="col-md-12 text-center py-4 subpage-header">Book Shelf</h2>
+            <div className="booklist">
+
+            <BookList />
+            </div>
         </div>
 
     )
