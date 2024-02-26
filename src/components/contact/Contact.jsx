@@ -20,8 +20,8 @@ const Contact = () => {
   if (emailSent) thankYouNote = <div>Message sent! Thanks for writing 🤗</div>
 
   return (
-    <div className="outer-container text-center">
-      <h1 className="display-4 mt-5">About Me</h1>
+    <div className="subpage-container text-center">
+      <h1 className="display-4 py-5">About Me</h1>
 
       <Row className="justify-content-center align-items-center">
         <Col className="col-7 mt-2 about-me-text">
@@ -29,7 +29,7 @@ const Contact = () => {
         </Col>
 
       </Row>
-      <h4 className="display-5">Contact</h4>
+      <h4 className="display-5 mt-3">Contact</h4>
       <Row className="justify-content-center">
         <Col className="col-6">
           <Form className="d-flex flex-column text-start" onSubmit={(e) => sendEmail(e)} ref={form}>
