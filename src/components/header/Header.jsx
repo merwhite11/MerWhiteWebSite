@@ -1,0 +1,15 @@
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Banner from '../../Images/logo-HoverDiamond.jpg'
+
+const Header = () => {
+  const navigate = useNavigate();
+  const handleClick = (path) => navigate(`/${path}`)
+  return (
+    <div className='header' >
+        <img src={Banner} className="img-fluid"/>
+      </div>
+  )
+}
+
+export default Header;

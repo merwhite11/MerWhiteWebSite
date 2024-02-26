@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import {Document, Page} from "react-pdf";
+import ReactPDF from '@react-pdf/renderer';
 // import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,8 +10,8 @@ const WritingContainer = (props) => {
     const navigate = useNavigate();
     const handleClick = () => navigate('/writing')
     return (
-        <div className="col-md-4">
-            <div className="card">
+        <div className="writing-container float-left">
+            <div className="card text-center">
                 <div className="card-body">
                     <h2 className="card-title">WRITING</h2>
                     <p className="card-text">Check out my e-books!</p>
