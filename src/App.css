@@ -247,11 +247,14 @@
     background-color: aliceblue; */
     display: flex;
     flex-direction: row;
+    background-image: url('./Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .dance-list{
-    justify-self: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .dance-card {
     /* display: flex;
@@ -268,14 +271,17 @@
 }
 
 /* WRITING HOME */
-.bookshelf-container{
+.subpage-container{
     /* margin-left: 10vw;
     margin-right: 10vh; */
     /* margin-top: 2vh; */
+    font-family: Dosis;
+    font-weight: 900;
     background-image: url('./Images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .booklist{
     display: flex;
