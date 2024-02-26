@@ -1,5 +1,7 @@
 import React from 'react';
-import DanceTile from './DanceTile.jsx'
+import DanceTile from './DanceTile.jsx';
+
+
 const DanceList = () => {
   var closer = "LJ-MTCDq0Zg?si=jf6KsUp6th0ozj04";
   var malamente = "Bc_uHVpIUD4?si=5J1EB9VbgqA0UXvo";

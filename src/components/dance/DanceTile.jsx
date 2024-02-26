@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from "react-youtube";
+import LazyLoad from 'react-lazyload'
 
 function DanceTile({ videoId }) {
     const options = {
@@ -15,10 +16,11 @@ function DanceTile({ videoId }) {
     // }
     return (
         <div className="p-2">
+        <LazyLoad height={'50vh'} once>
             <div className="dance-card">
                 <iframe
-                    width="500"
-                    height="300"
+                    width="560"
+                    height="315"
                     src={`https://www.youtube.com/embed/${videoId}`}
                     title="YouTube video player"
                     frameborder="0"
@@ -26,6 +28,7 @@ function DanceTile({ videoId }) {
                     allowfullscreen
                 ></iframe>
             </div>
+        </LazyLoad>
         </div>
 
     )
