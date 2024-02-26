@@ -14,7 +14,7 @@ function DanceTile({ videoId }) {
     //     event.target.pauseVideo();
     // }
     return (
-        <div className="dance-tile">
+        <div className="p-2">
             <div className="dance-card">
                 <iframe
                     width="450"

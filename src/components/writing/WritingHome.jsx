@@ -15,12 +15,10 @@ const WritingHome = (props) => {
         navigate(`/${path}`)
     }
     return (
-        <div className="bookshelf-container">
-            <h2 className="col-md-12 text-center py-4 subpage-header">Book Shelf</h2>
-            <div className="booklist">
-
-            <BookList />
-            </div>
+        <div className="outer-container text-center">
+             <h2 className="display-4 mt-5">Book Shelf</h2>
+            {/* <h2 className="col-md-12 text-center py-4 subpage-header">Book Shelf</h2> */}
+            <BookList className="booklist mx-7"/>
         </div>
 
     )
