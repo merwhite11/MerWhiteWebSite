@@ -17,7 +17,7 @@ function DanceTile({ videoId }) {
         <div className="p-2">
             <div className="dance-card">
                 <iframe
-                    width="450"
+                    width="500"
                     height="300"
                     src={`https://www.youtube.com/embed/${videoId}`}
                     title="YouTube video player"
