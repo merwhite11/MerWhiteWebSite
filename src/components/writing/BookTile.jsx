@@ -13,8 +13,8 @@ function BookTile({cover, summary, path, title}) {
         <div className="book-card">
             <img className="book-thumbnail" height={200} width={'auto'} src={cover} loading="lazy"></img>
                 <div className="book-info">
-                    <h4 className="book-title" onClick={(e)=>handleClick(path)}>{title}</h4>
-                    <div className="book-summary">{summary}</div>
+                    <h4 className="book-title text-lg-md" onClick={(e)=>handleClick(path)}>{title}</h4>
+                    <div className="book-summary text-sm-md">{summary}</div>
                 </div>
         </div>
     </div>

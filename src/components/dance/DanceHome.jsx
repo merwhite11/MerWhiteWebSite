@@ -10,13 +10,9 @@ import DanceList from './DanceList.jsx'
 class DanceHome extends React.Component {
     render() {
         return (
-        <div className="subpage-container  ">
+        <div className="subpage-container d-flex flex-column justify-content-center align-items-center">
             <h2 className="display-4 text-center py-4">Dance Floor</h2>
-            <div className="d-flex flex-wrap justify-content-center align-items-center">
-
             <DanceList/>
-            </div>
-
         </div>
         )
     }
