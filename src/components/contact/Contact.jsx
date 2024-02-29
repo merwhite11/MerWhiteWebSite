@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import AppNavbar from '../AppNavbar.jsx';
 
 const Contact = () => {
   const [emailSent, setEmailSent] = useState(false)
@@ -21,6 +22,7 @@ const Contact = () => {
 
   return (
     <div className="subpage-container text-center">
+      <AppNavbar></AppNavbar>
       <h1 className="display-4 pt-5 pb-3">About Me</h1>
 
       <Row className="justify-content-center align-items-center">

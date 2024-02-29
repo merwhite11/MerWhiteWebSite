@@ -35,7 +35,6 @@
     font-weight: 600; */
     font-family: Gruppo;
     font-weight: 900;
-    font-stretch: 200%;
     /* margin-left: 10vw;
     margin-right: 10vh; */
 }
@@ -164,7 +163,7 @@
 
   @media (min-width: 576px) {
     .sub-title {
-      font-size: 20px; /* Adjust font size for small screens */
+      font-size: 18px; /* Adjust font size for small screens */
       padding-top: 4px;
     }
     .book-title {
@@ -177,7 +176,7 @@
 
   @media (min-width: 768px) {
     .sub-title {
-      font-size: 24px; /* Adjust font size for medium screens */
+      font-size: 20px; /* Adjust font size for medium screens */
     }
     .book-title {
         font-size: 20px;
@@ -189,7 +188,7 @@
 
   @media (min-width: 992px) {
     .sub-title {
-      font-size: 28px; /* Adjust font size for large screens */
+      font-size: 24px; /* Adjust font size for large screens */
     }
     .book-title {
         font-size: 24px;
@@ -201,7 +200,7 @@
 
   @media (min-width: 1200px) {
     .sub-title {
-      font-size: 32px; /* Adjust font size for extra-large screens */
+      font-size: 28px; /* Adjust font size for extra-large screens */
       padding-top: 5vh;
     }
     .book-title {
@@ -296,6 +295,11 @@
     display: flex;
     justify-self: center;
     padding: 2vh;
+}
+
+.nav-bar {
+    font-family: Gruppo;
+    font-weight: 700;
 }
 
 /* WRITING HOME */
