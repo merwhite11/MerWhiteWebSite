@@ -9,7 +9,8 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Poiret+One&family=Questrial&display=swap');
 /*HOME PAGE */
 /*HEADER */
 
@@ -30,8 +31,11 @@
     /* justify-content: center; */
     /* border: 3px solid aqua; */
     /* margin-top: 2vh; */
-    font-family: Dosis;
-    font-weight: 800;
+    /* font-family: Dosis;
+    font-weight: 600; */
+    font-family: Gruppo;
+    font-weight: 900;
+    font-stretch: 200%;
     /* margin-left: 10vw;
     margin-right: 10vh; */
 }
@@ -134,7 +138,7 @@
   }
   @media (min-width: 0) {
     .sub-title {
-      font-size: 18px; /* Adjust font size for small screens */
+      font-size: 12px; /* Adjust font size for small screens */
       padding-top: 4px;
     }
     .book-title {
@@ -147,7 +151,7 @@
 
   @media (min-width: 576px) {
     .sub-title {
-      font-size: 18px; /* Adjust font size for small screens */
+      font-size: 16px; /* Adjust font size for small screens */
       padding-top: 4px;
     }
     .book-title {
@@ -160,7 +164,7 @@
 
   @media (min-width: 576px) {
     .sub-title {
-      font-size: 18px; /* Adjust font size for small screens */
+      font-size: 20px; /* Adjust font size for small screens */
       padding-top: 4px;
     }
     .book-title {
@@ -173,7 +177,7 @@
 
   @media (min-width: 768px) {
     .sub-title {
-      font-size: 20px; /* Adjust font size for medium screens */
+      font-size: 24px; /* Adjust font size for medium screens */
     }
     .book-title {
         font-size: 20px;
@@ -185,7 +189,7 @@
 
   @media (min-width: 992px) {
     .sub-title {
-      font-size: 22px; /* Adjust font size for large screens */
+      font-size: 28px; /* Adjust font size for large screens */
     }
     .book-title {
         font-size: 24px;
@@ -197,7 +201,7 @@
 
   @media (min-width: 1200px) {
     .sub-title {
-      font-size: 24px; /* Adjust font size for extra-large screens */
+      font-size: 32px; /* Adjust font size for extra-large screens */
       padding-top: 5vh;
     }
     .book-title {
