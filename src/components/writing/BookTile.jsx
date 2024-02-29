@@ -9,16 +9,20 @@ function BookTile({cover, summary, path, title}) {
     }
 
   return (
-    <div className="book-tile">
-        <div className="book-card">
-            <img className="book-thumbnail" height={200} width={'auto'} src={cover} loading="lazy"></img>
-                <div className="book-info">
+    <div className="container p-2">
+        <div className="col-12">
+        <div className="book-card d-flex">
+            <div className="thumbnail-div col-2 align-items-center">
+            <img className="img-thumbnail" src={cover} loading="lazy"></img>
+            </div>
+                <div className="col-9 d-flex flex-column px-2">
                     <h4 className="book-title text-lg-md" onClick={(e)=>handleClick(path)}>{title}</h4>
                     <div className="book-summary text-sm-md">{summary}</div>
                 </div>
         </div>
+        </div>
     </div>
-    )
+  )
 }
 
 export default BookTile;
