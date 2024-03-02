@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
-import DanceBtn from '../Images/dancing-button.png'
-import DanceBtnHover from '../Images/dancing-hover.png'
-import DanceBtnClick from '../Images/dancing-hover-ds.png';
-import WritingBtn from '../Images/writing-button.png'
-import WritingBtnHover from '../Images/writing-hover.png'
-import WritingBtnClick from '../Images/writing-hover-ds.png'
+import DanceBtn from '../images/dancing-button.png'
+import DanceBtnHover from '../images/dancing-hover.png'
+import DanceBtnClick from '../images/dancing-hover-ds.png';
+import WritingBtn from '../images/writing-button.png'
+import WritingBtnHover from '../images/writing-hover.png'
+import WritingBtnClick from '../images/writing-hover-ds.png'
 
 
 const Home_Body = () => {
@@ -33,9 +33,9 @@ const Home_Body = () => {
   const WritingBtnSrc = writingHover? WritingBtnHover : WritingBtn
 
   return (
-    <Container fluid>
-    <Row className="d-flex align-items-center justify-content-center py-2 px-4">
-      <Col sm={4} md={4} xs={4} className="text-left">
+    <Container>
+    <Row className="d-flex align-items-center justify-content-center py-2">
+      <Col lg={4} md={5} sm={6} xs={6} className="text-left">
         <div className="button-box">
         <img
         className="img-fluid button"
@@ -46,7 +46,7 @@ const Home_Body = () => {
         />
         </div>
       </Col>
-      <Col sm={4} md={4} xs={4} className="text-right">
+      <Col lg={4} md={5} sm={6} xs={6} className="text-right">
         <div className="button-box">
         <img
         className="img-fluid button"

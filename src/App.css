@@ -1,34 +1,61 @@
-/* .container-fluid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-@font-face {
-    font-family: 'HappinessMood';
-    src: local('HappinessMood'), url('./assets/HappinessMood.ttf') format('ttf')
-}
-
-@font-face {
-    font-family: 'Organical';
-    src: local('Organical'), url('./assets/Organical.ttf') format('truetype')
-}
+/*-------------------------FONTS --------------------------*/
 @import url('https://fonts.cdnfonts.com/css/organical-personal-use');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Poiret+One&family=Questrial&display=swap');
-/*HOME PAGE */
-/*HEADER */
+
+/*------------------------ HOME PAGE --------------------------*/
+
+.background {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
+    background-image: url('./components/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    position: fixed;
+}
+
+.header-comp-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 50%;
+    font-family: 'ORGANICAL PERSONAL USE', sans-serif;
+    color: #004953;
+}
+
+
+/* .header-image {
+    max-height: 80vh;
+    min-width: 40vw;
+} */
+
+.button-box{
+    height: 40vh;
+    margin-left: 6vw;
+    margin-top: 6vh;
+    max-height: 100%
+}
+
+/* .button{
+    max-height: 100%
+} */
+
+.subpage-container{
+    font-family: Dosis;
+    font-weight: 900;
+}
 
 .outer-container{
-    /* display: grid;
-    grid-template-rows: auto 1fr; */
-    /* display: flex;
-    flex-direction: column; */
-    /* border: 3px solid blueviolet; */
     width: 100vw;
     height: 100vh;
     min-height: 100vh;
-    background-image: url('./Images/background.jpg');
+    background-image: url('./components/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,35 +71,8 @@
     margin-right: 10vh; */
 }
 
-.box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 50%;
-    font-family: 'ORGANICAL PERSONAL USE', sans-serif;
-    /* font-size: larger; */
-    color: #004953;
-    min-width: 100%;
-}
-.box-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 50%;
-    font-family: Gruppo;
 
-}
 
-.button-box{
-    max-height: 80%;
-    height: 40vh;
-    margin-left: 6vw;
-    margin-top: 6vh
-}
-
-.button{
-    max-height: 100%
-}
 .subpage-header{
     align-self: center;
     justify-self: center;
@@ -80,65 +80,7 @@
     font-weight: 900;
 
 }
-.header-container{
-    width: 100vw;
-    height: 50vh;
-    /* display: flex; */
-    /* justify-content: center; */
-    align-items: center;
-    /* position: relative; */
 
-    /* justify-items: center; */
-}
-
-.left-header-image{
-    width: 100%
-    /* height: auto; */
-    /* transform: translate(-50%, -50%);
-    position: relative;
-    left: 50%;
-    top: 50%; */
-    /* margin-left: 5vw; */
-    /* justify-self: center; */
-    /* object-fit: contain; */
-}
-
-.title{
-    grid-column-start: 2;
-    justify-self: center;
-    align-items: center;
-}
-
-.title-image{
-    /* justify-self: center;
-    align-self: center; */
-    padding: 2vh;
-    height: 100%;
-    width: 70%;
-    margin-left: 9vw;
-    object-fit: contain;
-    margin-top: 10vh;
-}
-
-.whos-she{
-    grid-column-start: 3;
-    /* grid-row-start: 1; */
-    /* align-self: start;
-    justify-self: center ; */
-    /* margin-top: 9vh; */
-    padding-right: 5vw;
-    align-items: center;
-}
-
-.header-image {
-    max-height: 80vh;
-}
-.whos-she-image{
-    margin-top: 5vh;
-    /* margin-left: 3vw; */
-    width: 80%;
-    /* object-fit: contain; */
-}
 
 .sub-title{
     font-size: larger;
@@ -150,8 +92,8 @@
     padding-top: 4vh;
   }
   @media (min-width: 0) {
-    .box {
-        font-size: 20px;
+    .header-title {
+        font-size: 14px;
     }
     .sub-title {
       font-size: 12px; /* Adjust font size for small screens */
@@ -166,7 +108,7 @@
   }
 
   @media (min-width: 576px) {
-    .box {
+    .header-title {
         font-size: 20px;
     }
     .sub-title {
@@ -182,7 +124,7 @@
   }
 
   @media (min-width: 576px) {
-    .box {
+    .header-title {
         font-size: 30px;
     }
     .sub-title {
@@ -198,7 +140,7 @@
   }
 
   @media (min-width: 768px) {
-    .box {
+    .header-title {
         font-size: 30px;
     }
     .sub-title {
@@ -213,7 +155,7 @@
   }
 
   @media (min-width: 992px) {
-    .box {
+    .header-title {
         font-size: 50px;
     }
     .sub-title {
@@ -228,7 +170,7 @@
   }
 
   @media (min-width: 1200px) {
-    .box {
+    .header-title {
         font-size: 60px;
     }
     .sub-title {
@@ -255,22 +197,6 @@
     /* align-items: center; */
 }
 
-.arrows-container{
-    /* display: grid;
-    grid-row-start: 1;
-    grid-template-columns: 1fr 1fr; */
-    grid-column-start: 2;
-    display: flex;
-    justify-content: center;
-}
-.arrow-down-left{
-    /* grid-column-start: 1; */
-    float: left;
-}
-.arrow-down-right{
-    /* grid-column-start: 2; */
-    float: right;
-}
 .writing-container{
     /* pgrid-row-start: 1; */
     grid-column-start: 2;
@@ -304,7 +230,7 @@
     background-color: aliceblue; */
     display: flex;
     flex-direction: row;
-    background-image: url('./Images/background.jpg');
+    background-image: url('./components/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -334,19 +260,9 @@
     font-weight: 700;
 }
 
-/* WRITING HOME */
-.subpage-container{
-    /* margin-left: 10vw;
-    margin-right: 10vh; */
-    /* margin-top: 2vh; */
-    font-family: Dosis;
-    font-weight: 900;
-    background-image: url('./Images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
+
+
 .booklist{
     display: flex;
     flex-direction: column;

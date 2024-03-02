@@ -17,7 +17,6 @@ const WritingHome = (props) => {
             <AppNavbar></AppNavbar>
             <h2 className="display-4 text-center py-4">Book Shelf</h2>
             <div className="booklist">
-
             <BookList />
             </div>
         </div>

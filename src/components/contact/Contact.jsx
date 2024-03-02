@@ -21,9 +21,9 @@ const Contact = () => {
   if (emailSent) thankYouNote = <div>Message sent! Thanks for writing 🤗</div>
 
   return (
-    <div className="subpage-container text-center">
+    <div className="background subpage-container text-center">
       <AppNavbar></AppNavbar>
-      <h1 className="display-4 pt-5 pb-3">About Me</h1>
+      <h1 className="display-4 pb-3">About Me</h1>
 
       <Row className="justify-content-center align-items-center">
         <Col className="col-7 mt-2 about-me-text">
