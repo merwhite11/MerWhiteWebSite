@@ -4,10 +4,15 @@
     justify-content: center;
 } */
 @font-face {
-    font-family: 'Hyppolit';
-    src: local('HappinessMood'), url('./assets/HappinessMood.ttf')
+    font-family: 'HappinessMood';
+    src: local('HappinessMood'), url('./assets/HappinessMood.ttf') format('ttf')
 }
 
+@font-face {
+    font-family: 'Organical';
+    src: local('Organical'), url('./assets/Organical.ttf') format('truetype')
+}
+@import url('https://fonts.cdnfonts.com/css/organical-personal-use');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Estonia&family=Gruppo&family=Nunito:ital,wght@1,900&family=Poiret+One&family=Questrial&display=swap');
@@ -40,13 +45,21 @@
 }
 
 .box{
-    /* background-color: lightblue; */
-    /* padding: 20px; */
-    /* margin: 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
     max-height: 50%;
+    font-family: 'ORGANICAL PERSONAL USE', sans-serif;
+    /* font-size: larger; */
+    color: #004953;
+    min-width: 100%;
+}
+.box-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 50%;
+    font-family: Gruppo;
 
 }
 
@@ -129,6 +142,7 @@
 
 .sub-title{
     font-size: larger;
+    font-family: Gruppo;
 }
 
 .sub-title {
@@ -136,6 +150,9 @@
     padding-top: 4vh;
   }
   @media (min-width: 0) {
+    .box {
+        font-size: 20px;
+    }
     .sub-title {
       font-size: 12px; /* Adjust font size for small screens */
       padding-top: 4px;
@@ -149,6 +166,9 @@
   }
 
   @media (min-width: 576px) {
+    .box {
+        font-size: 20px;
+    }
     .sub-title {
       font-size: 16px; /* Adjust font size for small screens */
       padding-top: 4px;
@@ -162,6 +182,9 @@
   }
 
   @media (min-width: 576px) {
+    .box {
+        font-size: 30px;
+    }
     .sub-title {
       font-size: 18px; /* Adjust font size for small screens */
       padding-top: 4px;
@@ -175,6 +198,9 @@
   }
 
   @media (min-width: 768px) {
+    .box {
+        font-size: 30px;
+    }
     .sub-title {
       font-size: 20px; /* Adjust font size for medium screens */
     }
@@ -187,6 +213,9 @@
   }
 
   @media (min-width: 992px) {
+    .box {
+        font-size: 50px;
+    }
     .sub-title {
       font-size: 24px; /* Adjust font size for large screens */
     }
@@ -199,6 +228,9 @@
   }
 
   @media (min-width: 1200px) {
+    .box {
+        font-size: 60px;
+    }
     .sub-title {
       font-size: 28px; /* Adjust font size for extra-large screens */
       padding-top: 5vh;

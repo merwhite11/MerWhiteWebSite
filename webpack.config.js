@@ -48,7 +48,15 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192, // Convert files up to 8MB to base64 strings
+              name: 'fonts/[name].[hash:8].[ext]' // Output file name and path
+            }
+          }
+        ]
       }
     ]
   },
