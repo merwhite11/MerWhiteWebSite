@@ -25,7 +25,9 @@
     align-items: center;
     justify-content: center;
     max-height: 50%;
-    font-family: 'ORGANICAL PERSONAL USE', sans-serif;
+    font-family: Gruppo;
+    font-weight: 900;
+    /* font-family: 'ORGANICAL PERSONAL USE', sans-serif; */
     color: #004953;
 }
 
@@ -84,6 +86,7 @@
 
 .sub-title{
     font-size: larger;
+    /* font-family: Dosis; */
     font-family: Gruppo;
 }
 

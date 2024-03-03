@@ -34,6 +34,7 @@ const Header_Test = () => {
         </Col>
         <Col sm={4} md={4} xs={6}>
           <div className="header-comp-box">
+          {/* <h1 className="header-title mt-5">Mer White's Website</h1> */}
             <img className="img-fluid header-image" src={Logo} />
           </div>
         </Col>
@@ -42,7 +43,7 @@ const Header_Test = () => {
             <h1 className="header-title mt-5"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              onClick={(e) => handleClick('contact')}>Who's She
+              onClick={(e) => handleClick('contact')}>Who's She?
 
             </h1>
             {/* <img
