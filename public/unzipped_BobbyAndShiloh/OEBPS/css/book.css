@@ -109,7 +109,7 @@ sup{
 	text-transform: none;
 	text-align: left;
 	text-indent: 0;
-	line-height: 1.091em;
+	line-height: 1.3em;
 	hyphens: none;
 	-webkit-hyphens: none;
 	-webkit-text-stroke-color: initial;
@@ -118,19 +118,19 @@ sup{
 }
 .p2{
 	font-size: 108.331%;
-	font-family: "Garamond";
-	line-height: 1.154em;
+	font-family: "Bookerly";
+	line-height: 1.3em;
 }
 .p3{
 	font-size: 108.331%;
-	font-family: "Garamond";
+	font-family: "Bookerly";
 	text-align: center;
 	line-height: 1.154em;
 }
 .p4{
 	font-size: 100.000%;
 	font-family: "Calibri", "Carlito";
-	line-height: 1.188em;
+	line-height: 1.6em;
 }
 .p5{
 	padding-left: 0.303%;
@@ -165,12 +165,12 @@ sup{
 .p7{
 	padding-right: 56.379%;
 	font-size: 108.331%;
-	font-family: "Garamond";
+	font-family: "Bookerly";
 	line-height: 1.154em;
 }
 .p8{
 	font-size: 100.000%;
-	font-family: "Garamond";
+	font-family: "Bookerly";
 	line-height: 1.125em;
 }
 .p9{

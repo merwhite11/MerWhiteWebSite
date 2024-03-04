@@ -14,7 +14,7 @@ function App() {
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
         <Route path ="/grapevinediaries" element={<Reader doc={'unzipped_GVD/META-INF'} title={'The Grapevine Diaries'}/>} />
-        <Route path ="/cuento" element={<Reader doc={'Blinking.epub'} title={'Story Twice Told // Cuento Dos Veces Contado'}/>} />
+        <Route path ="/cuento" element={<Reader doc={'unzipped_Cuento/META-INF'} title={'Story Twice Told // Cuento Dos Veces Contado'}/>} />
         <Route path ="/bobby" element={<Reader doc={'unzipped_BobbyAndShiloh/META-INF'} title={'Bobby And Shiloh Save The Night'}/>} />
         <Route path ="/test" element={<Reader doc={'unzipped_Alice/META-INF'} title={'Alice in Wonderland'}/>} />
         <Route path ="/contact" element={<Contact />} />
