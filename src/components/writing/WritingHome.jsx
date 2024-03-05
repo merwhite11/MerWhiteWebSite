@@ -16,8 +16,8 @@ const WritingHome = (props) => {
         <div className="subpage-container background">
             <AppNavbar></AppNavbar>
             <h2 className="display-4 text-center py-4">Book Shelf</h2>
-            <div className="d-flex flex-column">
-            <BookList />
+            <div className="booklist">
+            <BookList/>
             </div>
         </div>
 
