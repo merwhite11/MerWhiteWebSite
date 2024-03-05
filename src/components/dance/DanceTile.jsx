@@ -15,7 +15,7 @@ function DanceTile({ videoId }) {
     //     event.target.pauseVideo();
     // }
     return (
-        <div className="p-2">
+        <div className="d-flex justify-self-center p-2">
         <LazyLoad height={'50vh'} once>
             <div className="dance-card">
                 <iframe

@@ -35,7 +35,7 @@ const Header_Test = () => {
         <Col sm={4} md={4} xs={6}>
           <div className="header-comp-box">
           {/* <h1 className="header-title mt-5">Mer White's Website</h1> */}
-            <img className="img-fluid header-image" src={Logo} />
+            <img className="img-fluid" src={Logo} />
           </div>
         </Col>
         <Col sm={4} md={4} xs={2}>

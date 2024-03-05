@@ -33,12 +33,12 @@ const Home_Body = () => {
   const WritingBtnSrc = writingHover? WritingBtnHover : WritingBtn
 
   return (
-    <Container>
+    <div>
     <Row className="d-flex align-items-center justify-content-center py-2">
-      <Col lg={4} md={5} sm={6} xs={6} className="text-left">
+      <Col lg={4} md={5} sm={6} xs={10} className="text-left">
         <div className="button-box">
         <img
-        className="img-fluid button"
+        className="button"
         src={WritingBtnSrc}
         onMouseEnter={() => handleMouseEnter("writing")}
         onMouseLeave={() => handleMouseLeave("writing")}
@@ -46,10 +46,10 @@ const Home_Body = () => {
         />
         </div>
       </Col>
-      <Col lg={4} md={5} sm={6} xs={6} className="text-right">
+      <Col lg={4} md={5} sm={6} xs={10} className="text-right">
         <div className="button-box">
         <img
-        className="img-fluid button"
+        className="button"
         src={DanceBtnSrc}
          onMouseEnter={() => handleMouseEnter("dance")}
          onMouseLeave={() => handleMouseLeave("dance")}
@@ -59,7 +59,7 @@ const Home_Body = () => {
         </div>
       </Col>
     </Row>
-  </Container>
+  </div>
   )
 };
 
