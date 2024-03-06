@@ -19,7 +19,6 @@
 }
 
 /*------------------------ HOME PAGE --------------------------*/
-
 .header-comp-box{
     display: flex;
     align-items: center;
@@ -51,13 +50,110 @@
 }
 
 
+/*------------------------ SUB PAGE --------------------------*/
+.subpage-container{
+    font-family: Dosis;
+    font-weight: 900;
+}
+
+/*------------------------ WRITING PAGE --------------------------*/
+.booklist{
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
+
+.book-card{
+    height: 30vh;
+    width: auto;
+    background-color: #F0F8FF;
+    padding: 2vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+.thumbnail-div{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.img-thumbnail{
+    max-height: 100%;
+    max-width: auto;
+}
+
+.book-title{
+    margin-top: 2vh;
+}
+
+.book-title:hover {
+    background-color: #D0F0C0;
+    font-weight: 300
+}
+.book-summary{
+    overflow: auto;
+    max-height: 100%;
+    @media (max-width: 576px) {
+        overflow-y: scroll;
+      }
+}
+/*------------------------ READER PAGE --------------------------*/
+.reader-container{
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 2vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.dance-floor-container{
+    /* display: grid;
+    grid-template-rows: 1fr 4fr;
+    background-color: aliceblue; */
+    display: flex;
+    flex-direction: row;
+    background-image: url('./components/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dance-card {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    /* border: 3px solid #66CDAA; */
+    padding: 2vh;
+    background-color: #F0F8FF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* .dance-tile{
+    display: flex;
+    justify-self: center;
+    padding: 2vh;
+} */
+
+
+.nav-bar {
+    font-family: Gruppo;
+    font-weight: 700;
+}
+
+
+/*------------------ ABOUT ME STYLES -------------------*/
+
+.about-me-text {
+    font-weight: 500
+}
+
+
 /*------------------------ DYNAMIC FONT SIZES --------------------------*/
-  @media (min-width: 320px) {
+@media (min-width: 320px) {
     .header-title {
         font-size: 14px;
     }
     .sub-title {
-      font-size: 12px; /* Adjust font size for small screens */
+      font-size: 12px;
       padding-top: 4px;
     }
     .book-title {
@@ -144,110 +240,5 @@
         font-size: 16px;
     }
   }
-/*------------------------ SUB PAGE --------------------------*/
-
-.subpage-container{
-    font-family: Dosis;
-    font-weight: 900;
-}
-
-/*------------------------ WRITING PAGE --------------------------*/
-.booklist{
-    padding-left: 12vw;
-    padding-right: 12vw;
-}
-
-.book-card{
-    height: 30vh;
-    width: auto;
-    background-color: #F0F8FF;
-    padding: 2vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
-}
-.thumbnail-div{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.img-thumbnail{
-    max-height: 100%;
-    max-width: auto;
-}
-
-.book-title{
-    margin-top: 2vh;
-}
-
-.book-title:hover {
-    background-color: #D0F0C0;
-    font-weight: 300
-}
-.book-summary{
-    overflow: auto;
-    max-height: 100%;
-    @media (max-width: 576px) {
-        overflow-y: scroll;
-      }
-}
-/*------------------------ READER PAGE --------------------------*/
-
-.dance-floor-container{
-    /* display: grid;
-    grid-template-rows: 1fr 4fr;
-    background-color: aliceblue; */
-    display: flex;
-    flex-direction: row;
-    background-image: url('./components/images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.dance-card {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    /* border: 3px solid #66CDAA; */
-    padding: 2vh;
-    background-color: #F0F8FF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-/* .dance-tile{
-    display: flex;
-    justify-self: center;
-    padding: 2vh;
-} */
-
-.nav-bar {
-    font-family: Gruppo;
-    font-weight: 700;
-}
-
-
-
-
-
-
-/* READER*/
-
-.reader-container{
-    width: 100vw;
-    height: 100vh;
-    margin-bottom: 2vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-/*------------------ ABOUT ME STYLES -------------------*/
-
-.about-me-text {
-    font-weight: 500
-}
-
-
-
 
 
