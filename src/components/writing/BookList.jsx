@@ -1,8 +1,8 @@
 import React from 'react';
 import BookTile from './BookTile.jsx';
-import GVDCover from '../../docs/GVDCover.jpg';
-import BlinkingCover from '../../docs/BlinkingCover.jpg'
-import BobbyCover from '../../docs/BobbyAndShiloh.jpg'
+import GVDCover from './bookcovers/GVDCover.jpg';
+import BlinkingCover from './bookcovers/BlinkingCover.jpg'
+import BobbyCover from './bookcovers/BobbyAndShiloh.jpg'
 
 
 const BookList = () => {

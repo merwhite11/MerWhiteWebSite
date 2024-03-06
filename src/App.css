@@ -27,7 +27,12 @@
     font-family: Gruppo;
     font-weight: 900;
     /* font-family: 'ORGANICAL PERSONAL USE', sans-serif; */
+}
+.page-title{
     color: #004953;
+}
+.whos-she:hover {
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .sub-title{
@@ -55,6 +60,7 @@
     font-family: Dosis;
     font-weight: 900;
 }
+
 
 /*------------------------ WRITING PAGE --------------------------*/
 .booklist{
@@ -146,10 +152,14 @@
     font-weight: 500
 }
 
+.list-group-item {
+    background-color: aliceblue;
+}
+
 
 /*------------------------ DYNAMIC FONT SIZES --------------------------*/
 @media (min-width: 320px) {
-    .header-title {
+    .page-title {
         font-size: 14px;
     }
     .sub-title {
@@ -160,15 +170,15 @@
         font-size: 14px;
     }
     .book-summary {
-        font-size: 8px;
+        font-size: 10px;
     }
     .nav-bar {
-        font-size: 10px;
+        font-size: 16px;
     }
   }
 
-  @media (min-width: 576px) {
-    .header-title {
+  @media (min-width: 425px) {
+    .page-title {
         font-size: 20px;
     }
     .sub-title {
@@ -182,12 +192,12 @@
         font-size: 10px;
     }
     .nav-bar {
-        font-size: 14px;
+        font-size: 16px;
     }
   }
 
   @media (min-width: 768px) {
-    .header-title {
+    .page-title {
         font-size: 30px;
     }
     .sub-title {
@@ -205,7 +215,7 @@
   }
 
   @media (min-width: 992px) {
-    .header-title {
+    .page-title {
         font-size: 50px;
     }
     .sub-title {
@@ -218,12 +228,12 @@
         font-size: 16px;
     }
     .nav-bar {
-        font-size: 16px;
+        font-size: 18px;
     }
   }
 
   @media (min-width: 1200px) {
-    .header-title {
+    .page-title {
         font-size: 60px;
     }
     .sub-title {
@@ -237,7 +247,7 @@
         font-size: 16px;
     }
     .nav-bar {
-        font-size: 16px;
+        font-size: 18px;
     }
   }
 

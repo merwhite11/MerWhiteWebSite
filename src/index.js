@@ -7,10 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import './assets/Organical.ttf'
 
-
-// const App = () => {
-//  return <h1>💠Welcome to Mer White's Web Site!💠</h1>;
-//  }
 const container = document.getElementById('app');
 const root = createRoot(container);
 root.render(

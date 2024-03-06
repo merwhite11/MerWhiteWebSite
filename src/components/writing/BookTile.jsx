@@ -17,7 +17,7 @@ function BookTile({ cover, summary, path, title }) {
                     </div>
                     <div className="col-9 d-flex flex-column px-2">
                         <h4 className="book-title text-lg-md" onClick={(e) => handleClick(path)}>{title}</h4>
-                        <div className="book-summary text-sm-md">{summary}</div>
+                        <div className="book-summary p-text text-sm-md">{summary}</div>
                     </div>
                 </div>
             </div>

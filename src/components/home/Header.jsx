@@ -28,7 +28,7 @@ const Header_Test = () => {
       <Row className="header" className="d-flex align-items-center justify-content-center py-2 px-4">
         <Col sm={4} md={4} xs={2} >
           <div className="header-comp-box">
-            <h1 className="header-title mt-5">Welcome to</h1>
+            <h1 className="page-title mt-5">Welcome to</h1>
             {/* <img className="img-fluid header-image" src={Welcome} /> */}
           </div>
         </Col>
@@ -40,7 +40,7 @@ const Header_Test = () => {
         </Col>
         <Col sm={4} md={4} xs={2}>
           <div className="header-comp-box">
-            <h1 className="header-title mt-5"
+            <h1 className="page-title whos-she mt-5"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={(e) => handleClick('contact')}>Who's She?

@@ -35,7 +35,7 @@ const Home_Body = () => {
   return (
     <div>
     <Row className="d-flex align-items-center justify-content-center py-2">
-      <Col lg={4} md={5} sm={6}  className="text-left">
+      <Col lg={4} md={5} sm={6} xs={10} className="text-left">
         <div className="button-box">
         <img
         className="button"
