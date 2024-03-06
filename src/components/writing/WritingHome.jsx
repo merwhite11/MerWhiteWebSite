@@ -13,7 +13,7 @@ const WritingHome = (props) => {
         navigate(`/${path}`)
     }
     return (
-        <div className="subpage-container background">
+        <div className="subpage-container background d-flex flex-column">
             <AppNavbar></AppNavbar>
             <h2 className="display-4 text-center py-4">Book Shelf</h2>
             <div className="booklist">

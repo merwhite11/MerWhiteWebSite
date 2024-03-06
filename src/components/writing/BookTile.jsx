@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import {Col} from 'react-bootstrap'
 function BookTile({ cover, summary, path, title }) {
     const navigate = useNavigate();
 
