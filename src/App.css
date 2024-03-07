@@ -61,6 +61,10 @@ text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     font-weight: 900;
 }
 
+.subpage-header {
+    color: #004953;
+}
+
 
 /*------------------------ WRITING PAGE --------------------------*/
 .booklist{
@@ -111,38 +115,22 @@ text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.dance-floor-container{
-    /* display: grid;
-    grid-template-rows: 1fr 4fr;
-    background-color: aliceblue; */
-    display: flex;
-    flex-direction: row;
-    background-image: url('./components/images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+/*------------------------ DANCE PAGE --------------------------*/
 
-.dance-card {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    /* border: 3px solid #66CDAA; */
-    padding: 2vh;
+.dance-card-container {
+
     background-color: #F0F8FF;
+    padding: 2vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-/* .dance-tile{
-    display: flex;
-    justify-self: center;
-    padding: 2vh;
-} */
 
 
+
+/*------------------ NAV BAR STYLES -------------------*/
 .nav-bar {
     font-family: Gruppo;
-    font-weight: 700;
+    font-weight: 900;
+    color: #004953;
 }
 
 
@@ -156,6 +144,9 @@ text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: aliceblue;
 }
 
+.send-btn {
+    background-color:#004953
+}
 
 /*------------------------ DYNAMIC FONT SIZES --------------------------*/
 @media (min-width: 320px) {

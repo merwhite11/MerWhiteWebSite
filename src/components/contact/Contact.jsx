@@ -31,8 +31,8 @@ const Contact = () => {
         <div class="container">
     <h4>Why'd you switch to tech?</h4>
     <ul class="list-group p-2">
-      <li class="list-group-item">I wanted to do the desk-job loose-equivalent of agricultural field labor</li>
-      <li class="list-group-item">Learn how to build out ideas that others can use</li>
+      <li class="list-group-item">I wanted to do the desk-job equivalent of agricultural field labor...</li>
+      <li class="list-group-item">and to learn how to build out ideas that can benefit others</li>
     </ul>
     <h4>Favorite things about coding?</h4>
     <ul class="list-group p-2">
@@ -41,8 +41,8 @@ const Contact = () => {
     </ul>
     <h4>What are your goals?</h4>
     <ul class="list-group p-2">
-      <li class="list-group-item">Keep building this website</li>
       <li class="list-group-item">Deepen my tech skills (front-end especially!)</li>
+      <li class="list-group-item">Build and collaborate - reach out below if you'd like to work together!</li>
     </ul>
   </div>
 
@@ -52,7 +52,7 @@ const Contact = () => {
 </Container>
       <h4 className="display-5 pt-5 subpage-header">Contact</h4>
       <Row className="justify-content-center">
-        <Col className="col-10 col-sm-8">
+        <Col className="col-10 col-sm-6">
           <Form className="d-flex flex-column text-start" onSubmit={(e) => sendEmail(e)} ref={form}>
 
             <Form.Group className="mb-3" controlId="formName">
@@ -73,7 +73,7 @@ const Contact = () => {
               <textarea className="form-control" rows="3" placeholder="I'd love to hear from you!"></textarea>
             </Form.Group>
             <div className="d-flex justify-content-center">
-            <Button className="mb-3 col-12 col-sm-4" variant="primary" type="submit">
+            <Button className="mb-3 col-12 col-sm-4 send-btn" variant="primary" type="submit">
               Send
             </Button>
             {thankYouNote}

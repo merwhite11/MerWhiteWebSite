@@ -15,7 +15,7 @@ const WritingHome = (props) => {
     return (
         <div className="subpage-container background d-flex flex-column">
             <AppNavbar></AppNavbar>
-            <h2 className="display-4 text-center py-4">Book Shelf</h2>
+            <h2 className="display-4 text-center py-4 subpage-header">Book Shelf</h2>
             <div className="booklist">
             <BookList/>
             </div>
