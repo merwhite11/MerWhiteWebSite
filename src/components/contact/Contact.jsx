@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import AppNavbar from '../AppNavbar.jsx';
 
 const Contact = () => {
   const [emailSent, setEmailSent] = useState(false)
@@ -20,18 +21,38 @@ const Contact = () => {
   if (emailSent) thankYouNote = <div>Message sent! Thanks for writing 🤗</div>
 
   return (
-    <div className="outer-container text-center">
-      <h1 className="display-4 mt-5">About Me</h1>
+    <div className="background subpage-container text-center">
+      <AppNavbar></AppNavbar>
+      <h1 className="display-4 pb-3 subpage-header">Interview With Myself</h1>
+<Container className="d-flex flex-column">
 
       <Row className="justify-content-center align-items-center">
-        <Col className="col-7 mt-2 about-me-text">
-          Hello ! Thanks for visiting my website. Before transitioning to a career in tech, I was working in vineyards which led to the creation of The Grapevine Diaries, which then led to the impetus for building this website. I love languages, studied Comparative Literature in college, and speak French and Spanish. So if you’re a word nerd like me, you can have some fun with the language toggle! My favorite language though, is dance and I’m always working on some DIY dance video which I perform, shoot and edit and then upload to YouTube.
+        <Col className="col-12 col-sm-7 mt-2 about-me-text p-text">
+        <div class="container">
+    <h4>Why'd you switch to tech?</h4>
+    <ul class="list-group p-2">
+      <li class="list-group-item">To work the desk-job equivalent of agricultural field labor, at the ground level</li>
+      <li class="list-group-item">and to learn how to build out ideas that can benefit others</li>
+    </ul>
+    <h4>Favorite things about coding?</h4>
+    <ul class="list-group p-2">
+      <li class="list-group-item">Seeing an idea take shape through iteration</li>
+      <li class="list-group-item">The feeling of getting unstuck after many, many moons</li>
+    </ul>
+    <h4>What are your goals?</h4>
+    <ul class="list-group p-2">
+      <li class="list-group-item">Deepen my tech skills (front-end especially!)</li>
+      <li class="list-group-item">Build and collaborate - reach out below if you'd like to work together!</li>
+    </ul>
+  </div>
+
         </Col>
 
       </Row>
-      <h4 className="display-5">Contact</h4>
+</Container>
+      <h4 className="display-5 pt-5 subpage-header">Contact</h4>
       <Row className="justify-content-center">
-        <Col className="col-6">
+        <Col className="col-10 col-sm-6">
           <Form className="d-flex flex-column text-start" onSubmit={(e) => sendEmail(e)} ref={form}>
 
             <Form.Group className="mb-3" controlId="formName">
@@ -52,7 +73,7 @@ const Contact = () => {
               <textarea className="form-control" rows="3" placeholder="I'd love to hear from you!"></textarea>
             </Form.Group>
             <div className="d-flex justify-content-center">
-            <Button className="mb-3 col-3" variant="primary" type="submit">
+            <Button className="mb-3 col-12 col-sm-4 send-btn" variant="primary" type="submit">
               Send
             </Button>
             {thankYouNote}

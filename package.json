@@ -43,8 +43,11 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-lazyload": "github:twobin/react-lazyload",
     "react-pdf": "^7.5.1",
     "react-reader": "^2.0.4",
+    "url-loader": "^4.1.1",
     "use-local-storage-state": "^19.1.0"
   }
 }
