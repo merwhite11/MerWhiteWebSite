@@ -31,13 +31,13 @@ const Contact = () => {
         <div class="container">
     <h4>Why'd you switch to tech?</h4>
     <ul class="list-group p-2">
-      <li class="list-group-item">I wanted to do the desk-job equivalent of agricultural field labor...</li>
+      <li class="list-group-item">To work the desk-job equivalent of agricultural field labor, at the ground level</li>
       <li class="list-group-item">and to learn how to build out ideas that can benefit others</li>
     </ul>
     <h4>Favorite things about coding?</h4>
     <ul class="list-group p-2">
       <li class="list-group-item">Seeing an idea take shape through iteration</li>
-      <li class="list-group-item">Getting unstuck after many, many moons</li>
+      <li class="list-group-item">The feeling of getting unstuck after many, many moons</li>
     </ul>
     <h4>What are your goals?</h4>
     <ul class="list-group p-2">
