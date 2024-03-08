@@ -126,7 +126,7 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              location={bookProgress[title] || 0}
+              location={0}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
                 console.log('location', location)
