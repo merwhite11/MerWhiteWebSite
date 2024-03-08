@@ -22,6 +22,15 @@ const Reader = ({ doc, title }) => {
     setModalOpen(!modalOpen);
   };
 
+  useEffect(() => {
+    if (!bookProgress[title]) {
+      setBookProgress(prevProgress => ({
+        ...prevProgress,
+        [title]: 0
+      }));
+    }
+  }, [title, bookProgress, setBookProgress]);
+
   const handleLocationChanged = (loc) => {
     console.log(bookProgress)
     setBookProgress({
@@ -54,6 +63,8 @@ const Reader = ({ doc, title }) => {
       selection?.removeAllRanges()
     }
   }
+
+
 
   useEffect(() => {
     localStorage.setItem('selections', JSON.stringify(selections))
