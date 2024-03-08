@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useNavigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useNavigate, BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import {Navbar, Nav, Container} from 'react-bootstrap';
 
 const AppNavbar = () => {
@@ -11,17 +11,16 @@ const AppNavbar = () => {
    }
   return (
     <Navbar className="nav-bar col-12" data-bs-theme="light">
-    <Container>
-      <Navbar.Collapse id="basic-navbar-nav" ></Navbar.Collapse>
-      <Nav className="justify-content-end">
-      <Nav.Link className="nav-bar" to="/">Home</Nav.Link>
-        <Nav.Link className="nav-bar" to="/writing">Writing</Nav.Link>
-        <Nav.Link className="nav-bar" to="/dance">Dance</Nav.Link>
-        <Nav.Link className="nav-bar" to="/contact">Who's She?</Nav.Link>
+    <Container className="justify-content-end">
+      <Nav>
+        <Nav.Link className="nav-bar" as={Link} to="/">Home</Nav.Link>
+        <Nav.Link className="nav-bar" as={Link} to="/writing">Writing</Nav.Link>
+        <Nav.Link className="nav-bar" as={Link} to="/dance">Dance</Nav.Link>
+        <Nav.Link className="nav-bar" as={Link} to="/contact">Who's She</Nav.Link>
       </Nav>
     </Container>
-    </Navbar>
-  );
+  </Navbar>
+    );
 }
 
 export default AppNavbar;

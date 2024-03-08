@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Switch, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import {Switch} from 'react-router-dom'
 import Home from './components/home/Home.jsx';
 import Contact from './components/contact/Contact.jsx';
 import DanceHome from './components/dance/DanceHome.jsx';
@@ -9,7 +10,8 @@ import Reader from './components/writing/Reader.jsx'
 function App() {
   return (
     <div>
-      <Routes>
+      <Router>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/writing" element={<WritingHome />} />
         <Route path="/dance" element={<DanceHome />} />
@@ -18,7 +20,8 @@ function App() {
         <Route path ="/bobby" element={<Reader doc={'unzipped_BobbyAndShiloh/META-INF'} title={'Bobby And Shiloh Save The Night'}/>} />
         <Route path ="/test" element={<Reader doc={'unzipped_Alice/META-INF'} title={'Alice in Wonderland'}/>} />
         <Route path ="/contact" element={<Contact />} />
-      </Routes>
+        </Routes>
+      </Router>
     </div>
   )
 }

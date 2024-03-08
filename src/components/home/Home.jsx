@@ -5,7 +5,7 @@ import Home_Body from './Home_Body.jsx';
 
 const Home = (props) => {
   return (
-    <div className="background">
+    <div id="home" className="background">
       <Header></Header>
       <Home_Body></Home_Body>
     </div>
