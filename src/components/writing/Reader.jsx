@@ -12,8 +12,9 @@ const Reader = ({ doc, title }) => {
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
+  // const [location, setLocation] = useState(null);
   const [largeText, setLargeText] = useState(null);
-  const [selections, setSelections] = useLocalStorageState('selections', []);
+  const [selections, setSelections] = useLocalStorageState('selections', {});
   const [modalOpen, setModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -22,21 +23,41 @@ const Reader = ({ doc, title }) => {
   };
 
   useEffect(() => {
+    if (!bookProgress || typeof bookProgress !== 'object') {
+      // Initialize bookProgress with an empty object
+      setBookProgress({});
+    }
+    if (!selections || typeof selections !== 'object') {
+      setSelections({});
+    }
+  }, []);
+
+
+
+  useEffect(() => {
       if (!bookProgress[title]) {
         setBookProgress(prevProgress => ({
           ...prevProgress,
           [title]: 0
         }));
       }
-  }, [title, bookProgress, setBookProgress]);
+  }, [bookProgress, setBookProgress]);
 
   const handleLocationChanged = (loc) => {
-    // console.log(bookProgress)
     setBookProgress({
       ...bookProgress,
       [title]: loc
     });
   };
+
+//   useEffect(() => {
+//     if (!selections[title]) {
+//       setSelections(prevProgress => ({
+//         ...prevProgress,
+//         [title]: ''
+//       }));
+//     }
+// }, [selections, setSelections]);
 
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
@@ -126,6 +147,7 @@ const Reader = ({ doc, title }) => {
               title={title}
               url={epubUrl}
               location={bookProgress[title] || 0}
+              // location = {location}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
                 // console.log('location', location)
