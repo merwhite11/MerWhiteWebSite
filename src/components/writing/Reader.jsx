@@ -14,7 +14,7 @@ const Reader = ({ doc, title }) => {
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
   // const [location, setLocation] = useState(null);
   const [largeText, setLargeText] = useState(null);
-  const [selections, setSelections] = useLocalStorageState('selections', []);
+  const [selections, setSelections] = useLocalStorageState('selections', {});
   const [modalOpen, setModalOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -27,7 +27,10 @@ const Reader = ({ doc, title }) => {
       // Initialize bookProgress with an empty object
       setBookProgress({});
     }
-  }, [bookProgress, setBookProgress]);
+    if (!selections || typeof selections !== 'object') {
+      setSelections({});
+    }
+  }, []);
 
 
 
@@ -38,7 +41,7 @@ const Reader = ({ doc, title }) => {
           [title]: 0
         }));
       }
-  }, [title, bookProgress, setBookProgress]);
+  }, [bookProgress, setBookProgress]);
 
   const handleLocationChanged = (loc) => {
     setBookProgress({
@@ -46,6 +49,15 @@ const Reader = ({ doc, title }) => {
       [title]: loc
     });
   };
+
+//   useEffect(() => {
+//     if (!selections[title]) {
+//       setSelections(prevProgress => ({
+//         ...prevProgress,
+//         [title]: ''
+//       }));
+//     }
+// }, [selections, setSelections]);
 
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
