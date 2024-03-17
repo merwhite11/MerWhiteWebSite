@@ -11,8 +11,8 @@ const Reader = ({ doc, title }) => {
   const epubUrl = `${doc}`;
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
-  // const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
-  const [location, setLocation] = useState(null);
+  const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
+  // const [location, setLocation] = useState(null);
   const [largeText, setLargeText] = useState(null);
   const [selections, setSelections] = useLocalStorageState('selections', []);
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,24 +22,29 @@ const Reader = ({ doc, title }) => {
     setModalOpen(!modalOpen);
   };
 
-  // useEffect(() => {
-  //     if (!bookProgress[title]) {
-  //       setBookProgress(prevProgress => ({
-  //         ...prevProgress,
-  //         [title]: 0
-  //       }));
-  //     }
-  // }, [title, bookProgress, setBookProgress]);
+  useEffect(() => {
+    if (!bookProgress || typeof bookProgress !== 'object') {
+      // Initialize bookProgress with an empty object
+      setBookProgress({});
+    }
+  }, [bookProgress, setBookProgress]);
+
+
+
+  useEffect(() => {
+      if (!bookProgress[title]) {
+        setBookProgress(prevProgress => ({
+          ...prevProgress,
+          [title]: 0
+        }));
+      }
+  }, [title, bookProgress, setBookProgress]);
 
   const handleLocationChanged = (loc) => {
-    // setBookProgress({
-    //   ...bookProgress,
-    //   [title]: loc
-    // });
-    setLocation({
-      ...location,
+    setBookProgress({
+      ...bookProgress,
       [title]: loc
-    })
+    });
   };
 
   function setRenderSelection(cfiRange, contents) {
@@ -129,8 +134,8 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              // location={bookProgress[title] || 0}
-              location = {location}
+              location={bookProgress[title] || 0}
+              // location = {location}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
                 // console.log('location', location)
