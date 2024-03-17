@@ -18,21 +18,20 @@ const Reader = ({ doc, title }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const toggleModal = () => {
-    console.log('toggle clicked')
     setModalOpen(!modalOpen);
   };
 
-  // useEffect(() => {
-  //   if (!bookProgress[title]) {
-  //     setBookProgress(prevProgress => ({
-  //       ...prevProgress,
-  //       [title]: 0
-  //     }));
-  //   }
-  // }, [title, bookProgress, setBookProgress]);
+  useEffect(() => {
+      if (!bookProgress[title]) {
+        setBookProgress(prevProgress => ({
+          ...prevProgress,
+          [title]: 0
+        }));
+      }
+  }, [title, bookProgress, setBookProgress]);
 
   const handleLocationChanged = (loc) => {
-    console.log(bookProgress)
+    // console.log(bookProgress)
     setBookProgress({
       ...bookProgress,
       [title]: loc
@@ -118,7 +117,7 @@ const Reader = ({ doc, title }) => {
 
         </div>
         <div className="col-md-6 d-flex justify-content-end align-items-center">
-          <AppNavbar/>
+          <AppNavbar />
         </div>
 
         <div className="col-md-12 aspect-ratio aspect-ratio-3x4 overflow-hidden d-flex justify-content-center align-items-center">
@@ -126,10 +125,10 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              location={0}
+              location={bookProgress[title] || 0}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
-                console.log('location', location)
+                // console.log('location', location)
                 renditionRef.current = rendition;
                 setRend(rendition)
                 rendition.hooks.content.register((contents) => {
