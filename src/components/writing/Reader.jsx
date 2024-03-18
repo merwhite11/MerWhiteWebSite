@@ -8,11 +8,10 @@ import AppNavbar from '../AppNavbar.jsx'
 
 const Reader = ({ doc, title }) => {
 
-  const epubUrl = `${doc}`;
+  const epubUrl = './epubs/' + `${doc}`;
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
-  // const [location, setLocation] = useState(null);
   const [largeText, setLargeText] = useState(null);
   const [selections, setSelections] = useLocalStorageState('selections', {});
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,7 +23,6 @@ const Reader = ({ doc, title }) => {
 
   useEffect(() => {
     if (!bookProgress || typeof bookProgress !== 'object') {
-      // Initialize bookProgress with an empty object
       setBookProgress({});
     }
     if (!selections || typeof selections !== 'object') {
