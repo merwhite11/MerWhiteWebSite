@@ -8,11 +8,10 @@ import AppNavbar from '../AppNavbar.jsx'
 
 const Reader = ({ doc, title }) => {
 
-  const epubUrl = `${doc}`;
+  const epubUrl = process.env.PUBLIC_URL + `${doc}`;
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
-  // const [location, setLocation] = useState(null);
   const [largeText, setLargeText] = useState(null);
   const [selections, setSelections] = useLocalStorageState('selections', {});
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,25 +22,29 @@ const Reader = ({ doc, title }) => {
   };
 
   useEffect(() => {
-    if (!bookProgress || typeof bookProgress !== 'object') {
-      // Initialize bookProgress with an empty object
-      setBookProgress({});
-    }
     if (!selections || typeof selections !== 'object') {
       setSelections({});
     }
   }, []);
 
 
-
-  useEffect(() => {
-      if (!bookProgress[title]) {
-        setBookProgress(prevProgress => ({
-          ...prevProgress,
-          [title]: 0
-        }));
-      }
-  }, [bookProgress, setBookProgress]);
+// const getLoc = () => {
+//   if (!bookProgress[title]) {
+//     setBookProgress(prevProgress => ({
+//       ...prevProgress,
+//       [title]: "epubcfi(/8/2!/4/1:0)"
+//     }));
+//     return bookProgress[title]
+//   }
+// };
+  // useEffect(() => {
+  //     if (!bookProgress) {
+  //       setBookProgress(prevProgress => ({
+  //         ...prevProgress,
+  //         [title]: "epubcfi(/8/2!/4/1:0)"
+  //       }));
+  //     }
+  // }, []);
 
   const handleLocationChanged = (loc) => {
     setBookProgress({
@@ -50,27 +53,17 @@ const Reader = ({ doc, title }) => {
     });
   };
 
-//   useEffect(() => {
-//     if (!selections[title]) {
-//       setSelections(prevProgress => ({
-//         ...prevProgress,
-//         [title]: ''
-//       }));
-//     }
-// }, [selections, setSelections]);
-
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
-      setSelections((prevSelections) => ({
-        ...prevSelections,
+      const existingSelections = JSON.parse(localStorage.getItem('selections')) || {};
+      const updatedSelections = {
+        ...existingSelections,
         [title]: [
-          ...(prevSelections[title] || []),
-          {
-            text: rend.getRange(cfiRange).toString(),
-            cfiRange,
-          },
-        ],
-      }));
+          ...(existingSelections[title] || []),
+          { text: rend.getRange(cfiRange).toString(), cfiRange }
+        ]
+      };
+      localStorage.setItem('selections', JSON.stringify(updatedSelections));
       rend.annotations.add(
         'highlight',
         cfiRange,
@@ -83,12 +76,6 @@ const Reader = ({ doc, title }) => {
       selection?.removeAllRanges()
     }
   }
-
-
-
-  useEffect(() => {
-    localStorage.setItem('selections', JSON.stringify(selections))
-  }, [selections])
 
   useEffect(() => {
     if (rend) {
@@ -146,11 +133,9 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              location={bookProgress[title] || 0}
-              // location = {location}
+              location = {bookProgress ? bookProgress[title] : bookProgress}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
-                // console.log('location', location)
                 renditionRef.current = rendition;
                 setRend(rendition)
                 rendition.hooks.content.register((contents) => {

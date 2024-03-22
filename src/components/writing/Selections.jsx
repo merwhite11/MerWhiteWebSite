@@ -38,20 +38,24 @@ const Selections = ({ rend, selections, setSelections, title }) => {
         <Collapse in={open}>
           <div>
             <ul className="list-unstyled border-top border-stone-400">
-              {selections[title]?.map(({ text, cfiRange }, i) => (
-                <li key={i} className="p-2">
-                  <span>{text}</span>
-                  <button
-                    className="btn btn-light p2"
-                    onClick={() => {
-                      rend?.annotations.remove(cfiRange, 'highlight')
-                      deleteSelection(title, i);
-                    }}
-                  >
-                    X
-                  </button>
-                </li>
-              ))}
+              {selections[title] ? (
+                selections[title].map(({ text, cfiRange }, i) => (
+                  <li key={i} className="p-2">
+                    <span>{text}</span>
+                    <button
+                      className="btn btn-light p2"
+                      onClick={() => {
+                        rend?.annotations.remove(cfiRange, 'highlight')
+                        deleteSelection(title, i);
+                      }}
+                    >
+                      X
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <li className="p-2"></li>
+              )}
             </ul>
           </div>
         </Collapse>
