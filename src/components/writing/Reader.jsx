@@ -8,7 +8,7 @@ import AppNavbar from '../AppNavbar.jsx'
 
 const Reader = ({ doc, title }) => {
 
-  const epubUrl = './epubs/' + `${doc}`;
+  const epubUrl = process.env.PUBLIC_URL + `${doc}`;
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
@@ -21,25 +21,33 @@ const Reader = ({ doc, title }) => {
     setModalOpen(!modalOpen);
   };
 
-  useEffect(() => {
-    if (!bookProgress || typeof bookProgress !== 'object') {
-      setBookProgress({});
-    }
-    if (!selections || typeof selections !== 'object') {
-      setSelections({});
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!bookProgress || typeof bookProgress !== 'object') {
+  //     setBookProgress({});
+  //   }
+  //   if (!selections || typeof selections !== 'object') {
+  //     setSelections({});
+  //   }
+  // }, []);
 
 
-
-  useEffect(() => {
-      if (!bookProgress[title]) {
-        setBookProgress(prevProgress => ({
-          ...prevProgress,
-          [title]: 0
-        }));
-      }
-  }, [bookProgress, setBookProgress]);
+// const getLoc = () => {
+//   if (!bookProgress[title]) {
+//     setBookProgress(prevProgress => ({
+//       ...prevProgress,
+//       [title]: "epubcfi(/8/2!/4/1:0)"
+//     }));
+//     return bookProgress[title]
+//   }
+// };
+  // useEffect(() => {
+  //     if (!bookProgress) {
+  //       setBookProgress(prevProgress => ({
+  //         ...prevProgress,
+  //         [title]: "epubcfi(/8/2!/4/1:0)"
+  //       }));
+  //     }
+  // }, []);
 
   const handleLocationChanged = (loc) => {
     setBookProgress({
@@ -144,11 +152,9 @@ const Reader = ({ doc, title }) => {
             < ReactReader
               title={title}
               url={epubUrl}
-              location={bookProgress[title] || 0}
-              // location = {location}
+              location = {bookProgress ? bookProgress[title] : bookProgress}
               locationChanged={handleLocationChanged}
               getRendition={(rendition) => {
-                // console.log('location', location)
                 renditionRef.current = rendition;
                 setRend(rendition)
                 rendition.hooks.content.register((contents) => {
