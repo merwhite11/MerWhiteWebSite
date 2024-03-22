@@ -21,14 +21,11 @@ const Reader = ({ doc, title }) => {
     setModalOpen(!modalOpen);
   };
 
-  // useEffect(() => {
-  //   if (!bookProgress || typeof bookProgress !== 'object') {
-  //     setBookProgress({});
-  //   }
-  //   if (!selections || typeof selections !== 'object') {
-  //     setSelections({});
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!selections || typeof selections !== 'object') {
+      setSelections({});
+    }
+  }, []);
 
 
 // const getLoc = () => {
@@ -56,27 +53,17 @@ const Reader = ({ doc, title }) => {
     });
   };
 
-//   useEffect(() => {
-//     if (!selections[title]) {
-//       setSelections(prevProgress => ({
-//         ...prevProgress,
-//         [title]: ''
-//       }));
-//     }
-// }, [selections, setSelections]);
-
   function setRenderSelection(cfiRange, contents) {
     if (rend) {
-      setSelections((prevSelections) => ({
-        ...prevSelections,
+      const existingSelections = JSON.parse(localStorage.getItem('selections')) || {};
+      const updatedSelections = {
+        ...existingSelections,
         [title]: [
-          ...(prevSelections[title] || []),
-          {
-            text: rend.getRange(cfiRange).toString(),
-            cfiRange,
-          },
-        ],
-      }));
+          ...(existingSelections[title] || []),
+          { text: rend.getRange(cfiRange).toString(), cfiRange }
+        ]
+      };
+      localStorage.setItem('selections', JSON.stringify(updatedSelections));
       rend.annotations.add(
         'highlight',
         cfiRange,
@@ -89,12 +76,6 @@ const Reader = ({ doc, title }) => {
       selection?.removeAllRanges()
     }
   }
-
-
-
-  useEffect(() => {
-    localStorage.setItem('selections', JSON.stringify(selections))
-  }, [selections])
 
   useEffect(() => {
     if (rend) {
