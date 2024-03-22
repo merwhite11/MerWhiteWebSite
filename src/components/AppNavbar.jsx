@@ -4,11 +4,11 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 
 const AppNavbar = () => {
    //needs to be triggered by a user action
-   const navigate = useNavigate();
+  //  const navigate = useNavigate();
 
-   const handleClick = (path) => {
-       navigate(`/${path}`)
-   }
+  //  const handleClick = (path) => {
+  //      navigate(`/${path}`)
+  //  }
   return (
     <Navbar className="nav-bar col-12" data-bs-theme="light">
     <Container className="justify-content-end">
