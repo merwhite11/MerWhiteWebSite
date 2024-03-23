@@ -8,7 +8,7 @@ import AppNavbar from '../AppNavbar.jsx'
 
 const Reader = ({ doc, title }) => {
 
-  const epubUrl = process.env.PUBLIC_URL + `${doc}`;
+  const epubUrl = process.env.PUBLIC_URL + `/epubs/${doc}`;
   const renditionRef = useRef(null)
   const [rend, setRend] = useState(null)
   const [bookProgress, setBookProgress] = useLocalStorageState('book-progress', {});
